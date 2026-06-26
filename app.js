@@ -14,6 +14,7 @@ const languageSelect = document.querySelector("#languageSelect");
 
 let scheduleData = null;
 let changesData = null;
+let tablesData = null;
 let selectedDate = null;
 let currentLang = localStorage.getItem("flight_lang") || "zh";
 
@@ -25,23 +26,17 @@ const translations = {
     updatedAt: "最後更新",
     route: "航線",
     month: "月份",
-    time: "時間",
-    origin: "出發地",
-    destination: "目的地",
-    flight: "航班",
-    price: "價格",
-    transfer: "轉機",
-    checkedBaggage: "托運",
-    carryOn: "手提",
-    status: "狀態",
-    link: "連結",
     rows: "筆",
     flights: "班",
     fixed: "固定",
+    changed: "變動",
     view: "查看",
     noSchedule: "此日期沒有固定班表",
     direct: "直飛",
     stops: "轉機",
+    checked: "托運",
+    carryOn: "手提",
+    noPrice: "未抓到價格",
     changedFields: {
       price: "票價",
       transfer_count: "轉機",
@@ -57,23 +52,17 @@ const translations = {
     updatedAt: "Updated",
     route: "Route",
     month: "Month",
-    time: "Time",
-    origin: "Origin",
-    destination: "Destination",
-    flight: "Flight",
-    price: "Price",
-    transfer: "Transfer",
-    checkedBaggage: "Checked",
-    carryOn: "Carry-on",
-    status: "Status",
-    link: "Link",
     rows: "rows",
     flights: "flights",
     fixed: "Fixed",
+    changed: "Changed",
     view: "View",
     noSchedule: "No fixed schedule for this date",
     direct: "Direct",
     stops: "stop(s)",
+    checked: "Checked",
+    carryOn: "Carry-on",
+    noPrice: "No fare",
     changedFields: {
       price: "Fare",
       transfer_count: "Transfer",
@@ -89,23 +78,17 @@ const translations = {
     updatedAt: "更新",
     route: "路線",
     month: "月",
-    time: "時刻",
-    origin: "出発地",
-    destination: "目的地",
-    flight: "便名",
-    price: "価格",
-    transfer: "乗継",
-    checkedBaggage: "受託",
-    carryOn: "機内",
-    status: "状態",
-    link: "リンク",
     rows: "件",
     flights: "便",
     fixed: "固定",
+    changed: "変更",
     view: "表示",
     noSchedule: "この日の固定ダイヤはありません",
     direct: "直行",
     stops: "乗継",
+    checked: "受託",
+    carryOn: "機内",
+    noPrice: "価格なし",
     changedFields: {
       price: "価格",
       transfer_count: "乗継",
@@ -121,23 +104,17 @@ const translations = {
     updatedAt: "업데이트",
     route: "노선",
     month: "월",
-    time: "시간",
-    origin: "출발지",
-    destination: "도착지",
-    flight: "항공편",
-    price: "가격",
-    transfer: "환승",
-    checkedBaggage: "위탁",
-    carryOn: "기내",
-    status: "상태",
-    link: "링크",
     rows: "건",
     flights: "편",
     fixed: "고정",
+    changed: "변경",
     view: "보기",
     noSchedule: "해당 날짜의 고정 스케줄이 없습니다",
     direct: "직항",
     stops: "환승",
+    checked: "위탁",
+    carryOn: "기내",
+    noPrice: "요금 없음",
     changedFields: {
       price: "요금",
       transfer_count: "환승",
@@ -159,16 +136,21 @@ function t(key) {
   return translations[currentLang][key] || translations.zh[key] || key;
 }
 
+function pad(value) {
+  return String(value).padStart(2, "0");
+}
+
 function isoDate(date) {
-  return date.toISOString().slice(0, 10);
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 }
 
 function parseDate(value) {
-  return new Date(`${value}T00:00:00`);
+  const [year, month, day] = value.split("-").map(Number);
+  return new Date(year, month - 1, day);
 }
 
 function monthKey(date) {
-  return date.toISOString().slice(0, 7);
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}`;
 }
 
 function addMonths(value, delta) {
@@ -177,14 +159,24 @@ function addMonths(value, delta) {
   return monthKey(date);
 }
 
-function money(value, currency = "TWD") {
-  if (value === "" || value === null || value === undefined) return "-";
-  const locale = { zh: "zh-TW", en: "en-US", ja: "ja-JP", ko: "ko-KR" }[currentLang] || "zh-TW";
-  return new Intl.NumberFormat(locale, { style: "currency", currency, maximumFractionDigits: 0 }).format(Number(value));
+function text(value) {
+  return String(value ?? "").trim();
 }
 
-function text(value) {
-  return String(value || "").trim();
+function escapeHtml(value) {
+  return text(value).replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  })[char]);
+}
+
+function money(value, currency = "TWD") {
+  if (value === "" || value === null || value === undefined) return t("noPrice");
+  const locale = { zh: "zh-TW", en: "en-US", ja: "ja-JP", ko: "ko-KR" }[currentLang] || "zh-TW";
+  return new Intl.NumberFormat(locale, { style: "currency", currency, maximumFractionDigits: 0 }).format(Number(value));
 }
 
 async function loadJson(path) {
@@ -194,26 +186,69 @@ async function loadJson(path) {
 }
 
 async function loadData() {
-  [scheduleData, changesData] = await Promise.all([
+  [scheduleData, changesData, tablesData] = await Promise.all([
     loadJson("./data/schedule.json"),
     loadJson("./data/changes.json"),
+    loadJson("./data/tables.json"),
   ]);
 }
 
+function tableMap(name, key) {
+  return new Map((tablesData?.tables?.[name] || []).map((item) => [item[key], item]));
+}
+
+function airport(code) {
+  return tableMap("airports", "airport_id").get(code) || { airport_id: code };
+}
+
+function airline(code) {
+  return tableMap("airlines", "airline_id").get(code) || { airline_id: code };
+}
+
+function airportName(code) {
+  const item = airport(code);
+  if (currentLang === "zh") return item.airport_name_zh || item.airport_name_en || code;
+  return item.airport_name_en || item.airport_name_zh || code;
+}
+
+function airlineName(code) {
+  const item = airline(code);
+  if (currentLang === "zh") return item.airline_name_zh || item.airline_name_en || code;
+  return item.airline_name_en || item.airline_name_zh || code;
+}
+
+function countryBadge(code) {
+  const item = airport(code);
+  return `<span class="country-badge">${escapeHtml(item.country || code)}</span>`;
+}
+
+function routeLabel(route) {
+  const [origin, destination] = route.split("-");
+  return `${airportName(origin)} ${origin} → ${airportName(destination)} ${destination}`;
+}
+
+function airlineIcon(code) {
+  const item = airline(code);
+  const label = escapeHtml(code || "?");
+  if (!item.icon_url) return `<span class="airline-fallback">${label}</span>`;
+  return `<img class="airline-logo" src="${escapeHtml(item.icon_url)}" alt="${escapeHtml(airlineName(code))}" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="airline-fallback" hidden>${label}</span>`;
+}
+
 function routeOptions() {
-  return scheduleData.routes || [...new Set(scheduleData.items.map((item) => item.route))];
+  return tablesData?.tables?.routes?.map((item) => item.route) || [...new Set(scheduleData.items.map((item) => item.route))];
 }
 
 function setRouteOptions() {
+  const selected = routeSelect.value;
   routeSelect.innerHTML = "";
   for (const route of routeOptions()) {
     const option = document.createElement("option");
     option.value = route;
-    const sample = scheduleData.items.find((item) => item.route === route);
-    option.textContent = sample
-      ? `${sample.origin_flag || ""}${sample.origin} ${sample.destination_flag || ""}${sample.destination}`
-      : route;
+    option.textContent = routeLabel(route);
     routeSelect.append(option);
+  }
+  if (selected && [...routeSelect.options].some((option) => option.value === selected)) {
+    routeSelect.value = selected;
   }
 }
 
@@ -236,9 +271,17 @@ function changedLabel(fields) {
     .join(" / ");
 }
 
+function transferAirportNames(value) {
+  return text(value)
+    .split(",")
+    .filter(Boolean)
+    .map((code) => airportName(code))
+    .join(" / ");
+}
+
 function transferText(row, change) {
   const count = Number(change?.transfer_count ?? row.transfer_count ?? 0);
-  const airports = text(change?.transfer_airports_zh || row.transfer_airports_zh);
+  const airports = transferAirportNames(change?.transfer_airports || row.transfer_airports);
   if (count === 0) return t("direct");
   return airports ? `${count} ${t("stops")} ${airports}` : `${count} ${t("stops")}`;
 }
@@ -274,14 +317,10 @@ function calendarCells(month) {
 function renderCalendar() {
   const route = routeSelect.value;
   const month = monthInput.value;
+  const locale = { zh: "zh-TW", en: "en-US", ja: "ja-JP", ko: "ko-KR" }[currentLang] || "zh-TW";
   const monthDate = parseDate(`${month}-01`);
-  monthTitle.textContent = new Intl.DateTimeFormat(
-    { zh: "zh-TW", en: "en-US", ja: "ja-JP", ko: "ko-KR" }[currentLang],
-    { year: "numeric", month: "long" },
-  ).format(monthDate);
-  updatedAt.textContent = new Date(changesData.generated_at || scheduleData.generated_at).toLocaleString(
-    { zh: "zh-TW", en: "en-US", ja: "ja-JP", ko: "ko-KR" }[currentLang],
-  );
+  monthTitle.textContent = new Intl.DateTimeFormat(locale, { year: "numeric", month: "long" }).format(monthDate);
+  updatedAt.textContent = new Date(changesData.generated_at || scheduleData.generated_at).toLocaleString(locale);
   calendarGrid.innerHTML = "";
 
   for (const cellDate of calendarCells(month)) {
@@ -315,6 +354,46 @@ function renderCalendar() {
   }
 }
 
+function flightCard(row, change) {
+  const origin = row.origin || change?.origin || "";
+  const destination = row.destination || change?.destination || "";
+  const airlineId = row.airline_id || change?.airline_id || "";
+  const checked = text(change?.baggage_checked_weight_kg);
+  const pieces = text(change?.baggage_checked_pieces);
+  const carry = text(change?.baggage_carry_on_weight_kg);
+  const bookingUrl = text(change?.booking_url);
+  const changedText = changedLabel(change?.changed_fields);
+  return `
+    <article class="flight-card ${change ? "changed" : ""}">
+      <div class="flight-time">
+        <strong>${escapeHtml(row.departure_time || change?.departure_time || "-")}</strong>
+        <span>${countryBadge(origin)} ${escapeHtml(airportName(origin))}</span>
+        <span class="route-arrow">→</span>
+        <span>${countryBadge(destination)} ${escapeHtml(airportName(destination))}</span>
+      </div>
+      <div class="flight-main">
+        <div>
+          <strong>${escapeHtml(row.flight_number || change?.flight_number || "-")}</strong>
+          <span class="airline-name">${airlineIcon(airlineId)} ${escapeHtml(airlineName(airlineId))}</span>
+        </div>
+      </div>
+      <div class="flight-price">
+        <strong>${change ? money(change.price, change.currency) : t("noPrice")}</strong>
+        <span class="status-chip ${change ? "hot" : ""}">${change ? t("changed") : t("fixed")}</span>
+      </div>
+      <div class="flight-facts">
+        <span class="fact-chip">${escapeHtml(transferText(row, change))}</span>
+        ${checked ? `<span class="fact-chip">${t("checked")} ${escapeHtml(checked)} kg${pieces ? ` / ${escapeHtml(pieces)}件` : ""}</span>` : ""}
+        ${carry ? `<span class="fact-chip">${t("carryOn")} ${escapeHtml(carry)} kg</span>` : ""}
+        ${changedText ? `<span class="fact-chip hot">${escapeHtml(changedText)}</span>` : ""}
+      </div>
+      <div class="flight-action">
+        ${bookingUrl ? `<a class="action-link" href="${escapeHtml(bookingUrl)}" target="_blank" rel="noopener">${t("view")}</a>` : ""}
+      </div>
+    </article>
+  `;
+}
+
 function renderDetails() {
   const route = routeSelect.value;
   const date = selectedDate || isoDate(parseDate(`${monthInput.value}-01`));
@@ -322,33 +401,14 @@ function renderDetails() {
   const changes = changeByFlight(route, date);
   const orphanChanges = changesForDate(route, date).filter((change) => !schedule.some((row) => row.flight_number === change.flight_number));
   const rows = [...schedule, ...orphanChanges];
-  detailTitle.textContent = `${date} ${route}`;
+  detailTitle.textContent = `${date} ${routeLabel(route)}`;
   detailCount.textContent = `${rows.length} ${t("rows")}`;
-  detailRows.innerHTML = "";
+  detailRows.innerHTML = rows
+    .map((row) => flightCard(row, changes.get(row.flight_number) || (row.change_id ? row : null)))
+    .join("");
 
-  for (const row of rows) {
-    const change = changes.get(row.flight_number) || (row.change_id ? row : null);
-    const tr = document.createElement("tr");
-    if (change) tr.classList.add("changed-row");
-    const bookingUrl = text(change?.booking_url);
-    const checked = text(change?.baggage_checked_weight_kg || row.baseline_checked_baggage_kg);
-    const carry = text(change?.baggage_carry_on_weight_kg || row.baseline_carry_on_kg);
-    tr.innerHTML = `
-      <td>${text(row.departure_time) || "-"}</td>
-      <td>${text(row.origin_flag || change?.origin_flag)} ${text(row.origin_name_zh || change?.origin_name_zh || row.origin || change?.origin)}</td>
-      <td>${text(row.destination_flag || change?.destination_flag)} ${text(row.destination_name_zh || change?.destination_name_zh || row.destination || change?.destination)}</td>
-      <td><strong>${text(row.flight_number)}</strong><br><small>${text(row.airline_name_zh || row.airline_name || row.airline_id)}</small></td>
-      <td>${change ? money(change.price, change.currency) : money(row.baseline_price, row.baseline_currency)}</td>
-      <td>${transferText(row, change)}</td>
-      <td>${checked ? `${checked} kg` : "-"}</td>
-      <td>${carry ? `${carry} kg` : "-"}</td>
-      <td>${change ? `<span class="badge">${changedLabel(change.changed_fields)}</span>` : `<span class="badge quiet">${t("fixed")}</span>`}</td>
-      <td>${bookingUrl ? `<a href="${bookingUrl}" target="_blank" rel="noopener">${t("view")}</a>` : "-"}</td>
-    `;
-    detailRows.append(tr);
-  }
   if (rows.length === 0) {
-    detailRows.innerHTML = `<tr><td class="empty-row" colspan="10">${t("noSchedule")}</td></tr>`;
+    detailRows.innerHTML = `<div class="empty-row">${t("noSchedule")}</div>`;
   }
 }
 
@@ -381,10 +441,12 @@ languageSelect.addEventListener("change", () => {
 });
 prevMonth.addEventListener("click", () => {
   monthInput.value = addMonths(monthInput.value, -1);
+  selectedDate = isoDate(parseDate(`${monthInput.value}-01`));
   render();
 });
 nextMonth.addEventListener("click", () => {
   monthInput.value = addMonths(monthInput.value, 1);
+  selectedDate = isoDate(parseDate(`${monthInput.value}-01`));
   render();
 });
 detailToggle.addEventListener("click", () => {

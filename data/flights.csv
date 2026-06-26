@@ -1,1 +1,1 @@
-id,flight_date,direction,airport,airport_name,flight_number,airline_id,airline_name,airline_name_zh,airline_name_en,departure_airport,departure_airport_name,departure_airport_name_zh,arrival_airport,arrival_airport_name,arrival_airport_name_zh,scheduled_time,estimated_time,actual_time,terminal,gate,remark,status_code,source,fetched_at
+id,flight_date,direction,airport,flight_number,airline_id,departure_airport,arrival_airport,scheduled_time,estimated_time,actual_time,terminal,gate,status_code,source

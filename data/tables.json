@@ -1,0 +1,322 @@
+{
+  "generated_at": "2026-06-26T10:41:49+00:00",
+  "schema_version": 2,
+  "tables": {
+    "airports": [
+      {
+        "airport_id": "BKK",
+        "airport_name_zh": "曼谷素萬那普",
+        "airport_name_en": "Bangkok Suvarnabhumi",
+        "country": "TH",
+        "flag": "🇹🇭"
+      },
+      {
+        "airport_id": "FUK",
+        "airport_name_zh": "福岡",
+        "airport_name_en": "Fukuoka",
+        "country": "JP",
+        "flag": "🇯🇵"
+      },
+      {
+        "airport_id": "GMP",
+        "airport_name_zh": "首爾金浦",
+        "airport_name_en": "Seoul Gimpo",
+        "country": "KR",
+        "flag": "🇰🇷"
+      },
+      {
+        "airport_id": "HAN",
+        "airport_name_zh": "河內",
+        "airport_name_en": "Hanoi",
+        "country": "VN",
+        "flag": "🇻🇳"
+      },
+      {
+        "airport_id": "HKG",
+        "airport_name_zh": "香港",
+        "airport_name_en": "Hong Kong",
+        "country": "HK",
+        "flag": "🇭🇰"
+      },
+      {
+        "airport_id": "HND",
+        "airport_name_zh": "東京羽田",
+        "airport_name_en": "Tokyo Haneda",
+        "country": "JP",
+        "flag": "🇯🇵"
+      },
+      {
+        "airport_id": "ICN",
+        "airport_name_zh": "首爾仁川",
+        "airport_name_en": "Seoul Incheon",
+        "country": "KR",
+        "flag": "🇰🇷"
+      },
+      {
+        "airport_id": "KHH",
+        "airport_name_zh": "高雄",
+        "airport_name_en": "Kaohsiung",
+        "country": "TW",
+        "flag": "🇹🇼"
+      },
+      {
+        "airport_id": "KIX",
+        "airport_name_zh": "大阪關西",
+        "airport_name_en": "Osaka Kansai",
+        "country": "JP",
+        "flag": "🇯🇵"
+      },
+      {
+        "airport_id": "KNH",
+        "airport_name_zh": "金門",
+        "airport_name_en": "Kinmen",
+        "country": "TW",
+        "flag": "🇹🇼"
+      },
+      {
+        "airport_id": "KUL",
+        "airport_name_zh": "吉隆坡",
+        "airport_name_en": "Kuala Lumpur",
+        "country": "MY",
+        "flag": "🇲🇾"
+      },
+      {
+        "airport_id": "LZN",
+        "airport_name_zh": "南竿",
+        "airport_name_en": "Nangan",
+        "country": "TW",
+        "flag": "🇹🇼"
+      },
+      {
+        "airport_id": "MNL",
+        "airport_name_zh": "馬尼拉",
+        "airport_name_en": "Manila",
+        "country": "PH",
+        "flag": "🇵🇭"
+      },
+      {
+        "airport_id": "MZG",
+        "airport_name_zh": "馬公",
+        "airport_name_en": "Magong",
+        "country": "TW",
+        "flag": "🇹🇼"
+      },
+      {
+        "airport_id": "NRT",
+        "airport_name_zh": "東京成田",
+        "airport_name_en": "Tokyo Narita",
+        "country": "JP",
+        "flag": "🇯🇵"
+      },
+      {
+        "airport_id": "OKA",
+        "airport_name_zh": "沖繩那霸",
+        "airport_name_en": "Okinawa Naha",
+        "country": "JP",
+        "flag": "🇯🇵"
+      },
+      {
+        "airport_id": "RMQ",
+        "airport_name_zh": "臺中",
+        "airport_name_en": "Taichung",
+        "country": "TW",
+        "flag": "🇹🇼"
+      },
+      {
+        "airport_id": "SGN",
+        "airport_name_zh": "胡志明市",
+        "airport_name_en": "Ho Chi Minh City",
+        "country": "VN",
+        "flag": "🇻🇳"
+      },
+      {
+        "airport_id": "SIN",
+        "airport_name_zh": "新加坡樟宜",
+        "airport_name_en": "Singapore Changi",
+        "country": "SG",
+        "flag": "🇸🇬"
+      },
+      {
+        "airport_id": "TPE",
+        "airport_name_zh": "桃園",
+        "airport_name_en": "Taoyuan",
+        "country": "TW",
+        "flag": "🇹🇼"
+      },
+      {
+        "airport_id": "TSA",
+        "airport_name_zh": "松山",
+        "airport_name_en": "Taipei Songshan",
+        "country": "TW",
+        "flag": "🇹🇼"
+      }
+    ],
+    "airlines": [
+      {
+        "airline_id": "AE",
+        "airline_name_zh": "華信航空",
+        "airline_name_en": "Mandarin Airlines",
+        "icon_url": "./assets/airlines/AE.png",
+        "rule_status": "needs_verification",
+        "rule_source_url": "https://www.mandarin-airlines.com/"
+      },
+      {
+        "airline_id": "B7",
+        "airline_name_zh": "立榮航空",
+        "airline_name_en": "UNI AIR",
+        "icon_url": "./assets/airlines/B7.png",
+        "rule_status": "needs_verification",
+        "rule_source_url": "https://www.uniair.com.tw/"
+      },
+      {
+        "airline_id": "BR",
+        "airline_name_zh": "長榮航空",
+        "airline_name_en": "EVA Air",
+        "icon_url": "./assets/airlines/BR.png",
+        "rule_status": "needs_verification",
+        "rule_source_url": "https://www.evaair.com/"
+      },
+      {
+        "airline_id": "CI",
+        "airline_name_zh": "中華航空",
+        "airline_name_en": "China Airlines",
+        "icon_url": "./assets/airlines/CI.png",
+        "rule_status": "needs_verification",
+        "rule_source_url": "https://www.china-airlines.com/"
+      },
+      {
+        "airline_id": "IT",
+        "airline_name_zh": "台灣虎航",
+        "airline_name_en": "Tigerair Taiwan",
+        "icon_url": "./assets/airlines/IT.png",
+        "rule_status": "needs_verification",
+        "rule_source_url": "https://www.tigerairtw.com/"
+      },
+      {
+        "airline_id": "JX",
+        "airline_name_zh": "星宇航空",
+        "airline_name_en": "STARLUX Airlines",
+        "icon_url": "./assets/airlines/JX.png",
+        "rule_status": "needs_verification",
+        "rule_source_url": "https://www.starlux-airlines.com/"
+      }
+    ],
+    "routes": [
+      {
+        "route": "TPE-NRT",
+        "origin": "TPE",
+        "destination": "NRT"
+      },
+      {
+        "route": "TPE-HND",
+        "origin": "TPE",
+        "destination": "HND"
+      },
+      {
+        "route": "TPE-KIX",
+        "origin": "TPE",
+        "destination": "KIX"
+      },
+      {
+        "route": "TPE-FUK",
+        "origin": "TPE",
+        "destination": "FUK"
+      },
+      {
+        "route": "TPE-OKA",
+        "origin": "TPE",
+        "destination": "OKA"
+      },
+      {
+        "route": "TPE-ICN",
+        "origin": "TPE",
+        "destination": "ICN"
+      },
+      {
+        "route": "TPE-GMP",
+        "origin": "TPE",
+        "destination": "GMP"
+      },
+      {
+        "route": "TPE-HKG",
+        "origin": "TPE",
+        "destination": "HKG"
+      },
+      {
+        "route": "TPE-BKK",
+        "origin": "TPE",
+        "destination": "BKK"
+      },
+      {
+        "route": "TPE-SIN",
+        "origin": "TPE",
+        "destination": "SIN"
+      },
+      {
+        "route": "TPE-KUL",
+        "origin": "TPE",
+        "destination": "KUL"
+      },
+      {
+        "route": "TPE-MNL",
+        "origin": "TPE",
+        "destination": "MNL"
+      },
+      {
+        "route": "TPE-SGN",
+        "origin": "TPE",
+        "destination": "SGN"
+      },
+      {
+        "route": "TPE-HAN",
+        "origin": "TPE",
+        "destination": "HAN"
+      },
+      {
+        "route": "KHH-NRT",
+        "origin": "KHH",
+        "destination": "NRT"
+      },
+      {
+        "route": "KHH-KIX",
+        "origin": "KHH",
+        "destination": "KIX"
+      },
+      {
+        "route": "KHH-ICN",
+        "origin": "KHH",
+        "destination": "ICN"
+      },
+      {
+        "route": "KHH-HKG",
+        "origin": "KHH",
+        "destination": "HKG"
+      },
+      {
+        "route": "TSA-KNH",
+        "origin": "TSA",
+        "destination": "KNH"
+      },
+      {
+        "route": "TSA-MZG",
+        "origin": "TSA",
+        "destination": "MZG"
+      },
+      {
+        "route": "TSA-LZN",
+        "origin": "TSA",
+        "destination": "LZN"
+      },
+      {
+        "route": "KHH-MZG",
+        "origin": "KHH",
+        "destination": "MZG"
+      },
+      {
+        "route": "RMQ-MZG",
+        "origin": "RMQ",
+        "destination": "MZG"
+      }
+    ]
+  }
+}

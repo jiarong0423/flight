@@ -7,6 +7,7 @@
 - `data/schedule.json`, `data/schedule.csv`: 固定航班班表底表。
 - `data/changes.json`, `data/changes.csv`: 只保存相對固定班表的變動項。
 - `data/offers.json`, `data/offers.csv`: 票價 offer 標準化資料。
+- `data/tables.json`, `data/tables.csv`: 機場、航空公司、航線查找表。
 - `config/lookups.json`: 機場、方向、狀態、行李欄位查找表。
 - `config/airline_rules.json`: 航空公司中文名與規則欄位查找表。
 - `scripts/crawler.py`: TDX 航空 FIDS crawler。
@@ -104,8 +105,8 @@ powershell -ExecutionPolicy Bypass -File scripts\install_windows_task.ps1
 
 前端只讀標準欄位，不直接解析來源欄位：
 
-- 航空公司中文由 `config/airline_rules.json` 對應成 `airline_name_zh`。
-- 機場中文由 `config/lookups.json` 對應成 `origin_name_zh` / `destination_name_zh`。
-- 固定班表存在 `data/schedule.json`。
-- 票價、行李、轉機等變動存在 `data/changes.json`。
+- 固定班表存在 `data/schedule.json` / `data/schedule.csv`，只保留固定比對欄位。
+- 票價、行李、轉機等變動存在 `data/changes.json` / `data/changes.csv`，固定鍵在前、變動值在後。
+- 機場中文、國旗、航空公司中文與 logo URL 存在 `data/tables.json` / `data/tables.csv`。
+- `data/offers.json` / `data/offers.csv` 是來源 offer 的標準化暫存表，欄位同樣先固定鍵、後變動值。
 - 月曆以 `schedule + changes` 疊加顯示，有變動的日期用氣泡標示。

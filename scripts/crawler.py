@@ -26,8 +26,6 @@ RAW_DIR = ROOT / "data" / "raw"
 
 TDX_TOKEN_URL = "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token"
 TDX_AIR_FIDS_URL = "https://tdx.transportdata.tw/api/basic/v2/Air/FIDS/Airport/{direction}/{airport}"
-AMADEUS_TEST_BASE_URL = "https://test.api.amadeus.com"
-AMADEUS_PROD_BASE_URL = "https://api.amadeus.com"
 
 
 class CrawlError(RuntimeError):
@@ -81,22 +79,6 @@ def request_form_json(url: str, form: dict[str, str], timeout_seconds: int) -> A
             return json.loads(response.read().decode(charset, errors="replace"))
     except (HTTPError, URLError, TimeoutError) as exc:
         raise CrawlError(f"Token request failed: {exc}") from exc
-
-
-def request_form_json_headers(url: str, form: dict[str, str], timeout_seconds: int, headers: dict[str, str] | None = None) -> Any:
-    body = urlencode(form).encode("utf-8")
-    request_headers = {"Content-Type": "application/x-www-form-urlencoded"}
-    request_headers.update(headers or {})
-    request = Request(url, data=body, headers=request_headers, method="POST")
-    try:
-        with urlopen(request, timeout=timeout_seconds, context=tls_context()) as response:
-            charset = response.headers.get_content_charset() or "utf-8"
-            return json.loads(response.read().decode(charset, errors="replace"))
-    except HTTPError as exc:
-        detail = exc.read().decode("utf-8", errors="replace")[:500]
-        raise CrawlError(f"Form request failed: {url}: HTTP {exc.code}: {detail}") from exc
-    except (URLError, TimeoutError) as exc:
-        raise CrawlError(f"Form request failed: {url}: {exc}") from exc
 
 
 def first_value(record: dict[str, Any], *keys: str, default: Any = None) -> Any:
@@ -230,135 +212,70 @@ class TdxClient:
         return payload
 
 
-class AmadeusClient:
-    def __init__(self, config: dict[str, Any], source: dict[str, Any]):
-        self.timeout_seconds = int(config.get("timeout_seconds", 20))
-        self.client_id = os.getenv(source.get("client_id_env", "AMADEUS_CLIENT_ID"), "")
-        self.client_secret = os.getenv(source.get("client_secret_env", "AMADEUS_CLIENT_SECRET"), "")
-        self.base_url = AMADEUS_PROD_BASE_URL if source.get("environment") == "production" else AMADEUS_TEST_BASE_URL
-        self.currency = source.get("currency", "TWD")
-        self.adults = int(source.get("adults", 1))
-        self.max_results = int(source.get("max_results", 10))
-        self._token: str | None = None
-
-    def token(self) -> str:
-        if self._token:
-            return self._token
-        if not self.client_id or not self.client_secret:
-            raise CrawlError("Missing Amadeus credentials. Set AMADEUS_CLIENT_ID and AMADEUS_CLIENT_SECRET.")
-        payload = request_form_json_headers(
-            f"{self.base_url}/v1/security/oauth2/token",
-            {
-                "grant_type": "client_credentials",
-                "client_id": self.client_id,
-                "client_secret": self.client_secret,
-            },
-            self.timeout_seconds,
-        )
-        self._token = payload["access_token"]
-        return self._token
-
-    def flight_offers(self, route: str, departure_date: date) -> dict[str, Any]:
-        origin, destination = split_route(route)
-        query = {
-            "originLocationCode": origin,
-            "destinationLocationCode": destination,
-            "departureDate": departure_date.isoformat(),
-            "adults": self.adults,
-            "currencyCode": self.currency,
-            "max": self.max_results,
-        }
-        url = f"{self.base_url}/v2/shopping/flight-offers?{urlencode(query)}"
-        payload = request_json(
-            url,
-            self.timeout_seconds,
-            {
-                "Authorization": f"Bearer {self.token()}",
-                "Accept": "application/json",
-            },
-        )
-        save_raw(f"amadeus-{route}-{departure_date.isoformat()}", payload)
-        return payload
-
-
-def iso_time(value: Any) -> str:
-    text = str(value or "")
-    if "T" in text:
-        return text.split("T", 1)[1][:5]
-    return compact_time(text)
-
-
-def parse_duration_minutes(value: Any) -> int | str:
-    text = str(value or "")
-    match = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?", text)
-    if not match:
-        return ""
-    hours = int(match.group(1) or 0)
-    minutes = int(match.group(2) or 0)
-    return hours * 60 + minutes
-
-
-def amadeus_baggage(offer: dict[str, Any]) -> dict[str, Any]:
-    checked_weight = ""
-    checked_pieces = ""
-    fare_details = (
-        offer.get("travelerPricings", [{}])[0]
-        .get("fareDetailsBySegment", [])
-    )
-    for detail in fare_details:
-        bags = detail.get("includedCheckedBags") or {}
-        if not checked_weight and bags.get("weight"):
-            checked_weight = bags.get("weight")
-        if not checked_pieces and bags.get("quantity") is not None:
-            checked_pieces = bags.get("quantity")
-    return {
-        "baggage_checked_weight_kg": checked_weight,
-        "baggage_checked_pieces": checked_pieces,
-        "baggage_carry_on_weight_kg": "",
-        "baggage_text": "Amadeus includedCheckedBags",
-    }
-
-
-def parse_amadeus_offers(payload: dict[str, Any], route: str, departure_date: date) -> list[dict[str, Any]]:
+def parse_fast_flights_result(result: Any, route: str, departure_date: date, currency: str) -> list[dict[str, Any]]:
     parsed = []
-    for offer in payload.get("data", []):
-        itinerary = (offer.get("itineraries") or [{}])[0]
-        segments = itinerary.get("segments") or []
+    for index, offer in enumerate(result):
+        segments = getattr(offer, "flights", []) or []
         if not segments:
             continue
         first_segment = segments[0]
         last_segment = segments[-1]
-        airline_id = (offer.get("validatingAirlineCodes") or [first_segment.get("carrierCode", "")])[0]
-        flight_numbers = [
-            f"{segment.get('carrierCode', '')}{segment.get('number', '')}".strip()
-            for segment in segments
-        ]
+        airlines = getattr(offer, "airlines", []) or []
+        airline_text = " + ".join(str(item) for item in airlines if item)
+        airline_id = airline_text[:2].upper() if airline_text else ""
         transfer_airports = [
-            segment.get("arrival", {}).get("iataCode", "")
+            getattr(getattr(segment, "to_airport", None), "code", "")
             for segment in segments[:-1]
-            if segment.get("arrival", {}).get("iataCode")
+            if getattr(getattr(segment, "to_airport", None), "code", "")
         ]
-        transfer_airports_zh = " / ".join(airport_name(code) for code in transfer_airports)
         transfer_count = max(len(segments) - 1, 0)
-        baggage = amadeus_baggage(offer)
+        transfer_airports_zh = " / ".join(airport_name(code) for code in transfer_airports)
+        flight_number = airline_text or f"FAST{index + 1}"
         row = {
-            "price": offer.get("price", {}).get("grandTotal") or offer.get("price", {}).get("total", ""),
-            "currency": offer.get("price", {}).get("currency", "TWD"),
-            "flight_number": " + ".join(flight_numbers),
+            "price": getattr(offer, "price", ""),
+            "currency": currency,
+            "flight_number": flight_number,
             "airline_id": airline_id,
-            "departure_time": iso_time(first_segment.get("departure", {}).get("at")),
-            "arrival_time": iso_time(last_segment.get("arrival", {}).get("at")),
-            "duration_minutes": parse_duration_minutes(itinerary.get("duration")),
+            "airline_name": airline_text,
+            "departure_time": compact_time(getattr(getattr(first_segment, "departure", None), "time", "")),
+            "arrival_time": compact_time(getattr(getattr(last_segment, "arrival", None), "time", "")),
+            "duration_minutes": sum(int(getattr(segment, "duration", 0) or 0) for segment in segments),
             "transfer_count": transfer_count,
             "transfer_airports": ",".join(transfer_airports),
             "transfer_airports_zh": transfer_airports_zh,
-            "transfer_summary": "直飛" if transfer_count == 0 else f"{transfer_count} stop(s): {transfer_airports_zh or ','.join(transfer_airports)}",
-            "fare_brand": offer.get("pricingOptions", {}).get("fareType", [""])[0],
+            "transfer_summary": "直飛" if transfer_count == 0 else f"{transfer_count} stop(s) {transfer_airports_zh or ','.join(transfer_airports)}",
+            "baggage_text": "Not provided by fast-flights",
             "booking_url": "",
-            **baggage,
         }
-        parsed.append(normalize_offer(row, route, departure_date, "amadeus-flight-offers", {}))
+        parsed.append(normalize_offer(row, route, departure_date, "fast-flights", {}))
     return parsed
+
+
+def fetch_fast_flights_offer(route: str, departure_date: date, source: dict[str, Any]) -> list[dict[str, Any]]:
+    try:
+        from fast_flights import FlightQuery, Passengers, create_query, get_flights
+    except ImportError as exc:
+        raise CrawlError("fast-flights is not installed. Run: pip install fast-flights") from exc
+
+    origin, destination = split_route(route)
+    currency = source.get("currency", "TWD")
+    query = create_query(
+        flights=[
+            FlightQuery(
+                date=departure_date.isoformat(),
+                from_airport=origin,
+                to_airport=destination,
+                max_stops=source.get("max_stops", 2),
+            )
+        ],
+        trip="one-way",
+        passengers=Passengers(adults=int(source.get("adults", 1))),
+        language=source.get("language", "zh-TW"),
+        currency=currency,
+        max_stops=source.get("max_stops", 2),
+    )
+    result = get_flights(query)
+    return parse_fast_flights_result(result, route, departure_date, currency)
 
 
 def normalize_tdx_record(record: dict[str, Any], airport: str, direction: str) -> dict[str, Any]:
@@ -812,6 +729,12 @@ def mock_ticket_offers(config: dict[str, Any]) -> list[dict[str, Any]]:
 
 def crawl_ticket_offers(config: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     config = config or load_config()
+    if os.getenv("SKIP_TICKET_OFFERS") == "1":
+        print("WARN skipped ticket offer crawl: SKIP_TICKET_OFFERS=1")
+        return []
+    if os.getenv("OFFLINE_FALLBACK") == "1":
+        print("WARN using mock ticket offer fallback: OFFLINE_FALLBACK=1")
+        return mock_ticket_offers(config)
     routes = config.get("offer_routes", [])
     lookahead_days = int(config.get("offer_lookahead_days", 30))
     timeout_seconds = int(config.get("timeout_seconds", 20))
@@ -826,19 +749,19 @@ def crawl_ticket_offers(config: dict[str, Any] | None = None) -> list[dict[str, 
     for source in config.get("ticket_offer_sources", []):
         if not source.get("enabled", False):
             continue
-        if source.get("type") == "amadeus":
-            client = AmadeusClient(config, source)
+        source_lookahead_days = int(source.get("lookahead_days", lookahead_days))
+        source_delay = float(source.get("request_delay_seconds", delay))
+        if source.get("type") == "fast_flights":
             for route in routes:
-                for travel_day in date_range(today, lookahead_days):
+                for travel_day in date_range(today, source_lookahead_days):
                     try:
-                        payload = client.flight_offers(route, travel_day)
-                        offers.extend(parse_amadeus_offers(payload, route, travel_day))
-                        time.sleep(delay)
+                        offers.extend(fetch_fast_flights_offer(route, travel_day, source))
+                        time.sleep(source_delay)
                     except Exception as exc:
-                        print(f"WARN skipped Amadeus offer {route} {travel_day}: {exc}")
+                        print(f"WARN skipped fast-flights offer {route} {travel_day}: {exc}")
             continue
         for route in routes:
-            for travel_day in date_range(today, lookahead_days):
+            for travel_day in date_range(today, source_lookahead_days):
                 try:
                     url = fill_template(source["url"], route, travel_day)
                     text = request_text(url, timeout_seconds, headers)
@@ -851,7 +774,7 @@ def crawl_ticket_offers(config: dict[str, Any] | None = None) -> list[dict[str, 
                         offers.extend(parse_html_offer_source(text, source, route, travel_day))
                     else:
                         raise CrawlError(f"Unsupported ticket source type: {source.get('type')}")
-                    time.sleep(delay)
+                    time.sleep(source_delay)
                 except Exception as exc:
                     print(f"WARN skipped ticket offer {source.get('name')} {route} {travel_day}: {exc}")
 

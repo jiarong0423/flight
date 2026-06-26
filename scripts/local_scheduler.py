@@ -18,6 +18,8 @@ DATA_FILES = [
     "data/schedule.csv",
     "data/changes.json",
     "data/changes.csv",
+    "data/tables.json",
+    "data/tables.csv",
 ]
 
 

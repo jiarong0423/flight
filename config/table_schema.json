@@ -1,71 +1,55 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated_at": "2026-06-26",
+  "strategy": "fixed schedule + minimal change overlay + lookup tables",
   "tables": {
-    "airlines": {
-      "primary_key": "airline_id",
-      "columns": [
-        "airline_id",
-        "airline_name_zh",
-        "airline_name_en",
-        "rule_status",
-        "rule_source_url"
-      ]
-    },
     "airports": {
+      "file": "data/tables.json",
       "primary_key": "airport_id",
-      "columns": [
-        "airport_id",
-        "airport_name_zh",
-        "airport_name_en",
-        "country",
-        "flag"
-      ]
+      "columns": ["airport_id", "airport_name_zh", "airport_name_en", "country", "flag"]
+    },
+    "airlines": {
+      "file": "data/tables.json",
+      "primary_key": "airline_id",
+      "columns": ["airline_id", "airline_name_zh", "airline_name_en", "icon_url", "rule_status", "rule_source_url"]
+    },
+    "routes": {
+      "file": "data/tables.json",
+      "primary_key": "route",
+      "columns": ["route", "origin", "destination"]
     },
     "fixed_schedule": {
+      "file": "data/schedule.json",
       "primary_key": "schedule_id",
       "columns": [
         "schedule_id",
         "route",
         "origin",
-        "origin_name_zh",
-        "origin_country",
-        "origin_flag",
         "destination",
-        "destination_name_zh",
-        "destination_country",
-        "destination_flag",
         "flight_date",
         "weekday",
         "airline_id",
-        "airline_name_zh",
         "flight_number",
         "departure_time",
         "arrival_time",
         "duration_minutes",
         "transfer_count",
-        "source",
-        "fetched_at"
+        "transfer_airports",
+        "source"
       ]
     },
     "change_overlay": {
+      "file": "data/changes.json",
       "primary_key": "change_id",
       "columns": [
-        "change_id",
-        "change_type",
         "route",
         "origin",
-        "origin_name_zh",
-        "origin_country",
-        "origin_flag",
         "destination",
-        "destination_name_zh",
-        "destination_country",
-        "destination_flag",
         "flight_date",
         "flight_number",
         "airline_id",
-        "airline_name_zh",
+        "change_id",
+        "change_type",
         "price",
         "currency",
         "baggage_checked_weight_kg",
@@ -73,12 +57,34 @@
         "baggage_carry_on_weight_kg",
         "transfer_count",
         "transfer_airports",
-        "transfer_airports_zh",
-        "transfer_summary",
         "booking_url",
         "changed_fields",
-        "source",
-        "fetched_at"
+        "source"
+      ]
+    },
+    "ticket_offers": {
+      "file": "data/offers.json",
+      "primary_key": "id",
+      "columns": [
+        "route",
+        "origin",
+        "destination",
+        "departure_date",
+        "flight_number",
+        "airline_id",
+        "departure_time",
+        "arrival_time",
+        "duration_minutes",
+        "id",
+        "price",
+        "currency",
+        "transfer_count",
+        "transfer_airports",
+        "baggage_checked_weight_kg",
+        "baggage_checked_pieces",
+        "baggage_carry_on_weight_kg",
+        "booking_url",
+        "source"
       ]
     }
   }

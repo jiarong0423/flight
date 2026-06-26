@@ -227,53 +227,165 @@ button {
   display: none;
 }
 
-.table-wrap {
-  overflow-x: auto;
+.flight-list {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
 }
 
-table {
-  width: 100%;
-  min-width: 860px;
-  border-collapse: collapse;
+.flight-card {
+  display: grid;
+  grid-template-columns: minmax(210px, 1.2fr) minmax(180px, 1fr) minmax(130px, auto);
+  grid-template-areas:
+    "time main price"
+    "facts facts action";
+  gap: 10px 16px;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
 }
 
-th,
-td {
-  padding: 11px 12px;
-  border-top: 1px solid var(--line);
-  text-align: left;
-  white-space: nowrap;
-}
-
-th {
-  color: var(--muted);
-  font-size: 13px;
-  background: #fffaf4;
-}
-
-.changed-row {
+.flight-card.changed {
+  border-color: #ffc08f;
   background: var(--soft-change);
 }
 
-.badge {
-  display: inline-flex;
-  max-width: 240px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: var(--change);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 800;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.flight-time {
+  grid-area: time;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
 }
 
-.badge.quiet {
-  background: #eee6dc;
+.flight-time strong {
+  width: 58px;
+  font-size: 20px;
+}
+
+.flight-time span {
+  font-weight: 750;
+}
+
+.route-arrow {
   color: var(--muted);
 }
 
-a {
+.country-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #efe7de;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  vertical-align: middle;
+}
+
+.flight-main {
+  grid-area: main;
+  min-width: 0;
+}
+
+.flight-main strong {
+  display: block;
+  font-size: 20px;
+}
+
+.airline-name {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.airline-logo,
+.airline-fallback {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.airline-logo {
+  display: inline-block;
+  object-fit: contain;
+  padding: 3px;
+}
+
+.airline-fallback {
+  display: inline-grid;
+  place-items: center;
+  color: #fff;
+  background: var(--blue);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.airline-fallback[hidden] {
+  display: none;
+}
+
+.flight-price {
+  grid-area: price;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 6px;
+}
+
+.flight-price strong {
+  font-size: 20px;
+}
+
+.status-chip,
+.fact-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #eee6dc;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.status-chip.hot,
+.fact-chip.hot {
+  background: var(--change);
+  color: #fff;
+}
+
+.flight-facts {
+  grid-area: facts;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.flight-action {
+  grid-area: action;
+  text-align: right;
+}
+
+a,
+.action-link {
   color: var(--blue);
   font-weight: 800;
 }
@@ -310,5 +422,23 @@ a {
   .price-pill {
     font-size: 11px;
     padding: 2px 5px;
+  }
+
+  .flight-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "time"
+      "main"
+      "price"
+      "facts"
+      "action";
+  }
+
+  .flight-price {
+    align-items: start;
+  }
+
+  .flight-action {
+    text-align: left;
   }
 }

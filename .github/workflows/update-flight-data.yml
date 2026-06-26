@@ -20,6 +20,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
       - name: Generate static data
         env:
           TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
@@ -30,4 +33,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update flight static data"
-          file_pattern: "data/flights.json data/flights.csv"
+          file_pattern: "data/*.json data/*.csv assets/airlines/*.png"
