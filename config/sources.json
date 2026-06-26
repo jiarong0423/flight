@@ -1,0 +1,47 @@
+{
+  "routes": [
+    "TPE-NRT",
+    "TPE-ICN",
+    "TPE-BKK",
+    "TPE-HKG",
+    "TPE-SIN"
+  ],
+  "currency": "TWD",
+  "lookahead_days": 120,
+  "timeout_seconds": 20,
+  "request_delay_seconds": 0.2,
+  "user_agent": "flight-cache-crawler/1.0 (+https://github.com/jiarong0423/flight)",
+  "mock_fallback": true,
+  "sources": [
+    {
+      "name": "example-json-provider",
+      "type": "json",
+      "enabled": false,
+      "url": "https://example.com/api/flights?origin={origin}&destination={destination}&date={date}",
+      "items_path": "items",
+      "fields": {
+        "price": "price",
+        "currency": "currency"
+      }
+    },
+    {
+      "name": "example-csv-provider",
+      "type": "csv",
+      "enabled": false,
+      "url": "https://example.com/flights.csv",
+      "fields": {
+        "route": "route",
+        "travel_date": "travel_date",
+        "price": "price",
+        "currency": "currency"
+      }
+    },
+    {
+      "name": "example-html-provider",
+      "type": "html_regex",
+      "enabled": false,
+      "url": "https://example.com/flights/{origin}/{destination}/{date}",
+      "price_regex": "price[^0-9]*(?P<price>[0-9,]+)"
+    }
+  ]
+}

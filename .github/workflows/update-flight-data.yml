@@ -1,0 +1,30 @@
+name: Update flight static data
+
+on:
+  schedule:
+    - cron: "17 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate static data
+        run: python scripts/update_data.py
+
+      - name: Commit data changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update flight static data"
+          file_pattern: "data/flights.json data/flights.csv"

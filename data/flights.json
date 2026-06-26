@@ -1,0 +1,4854 @@
+{
+  "generated_at": "2026-06-26T09:23:23+00:00",
+  "source": "mock-fallback",
+  "currency": "TWD",
+  "routes": [
+    "TPE-NRT",
+    "TPE-ICN",
+    "TPE-BKK",
+    "TPE-HKG",
+    "TPE-SIN"
+  ],
+  "items": [
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-06-26",
+      "price": 13029,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-06-27",
+      "price": 9805,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-06-28",
+      "price": 8847,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-06-29",
+      "price": 13071,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-06-30",
+      "price": 6926,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-01",
+      "price": 8970,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-02",
+      "price": 12725,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-03",
+      "price": 8986,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-04",
+      "price": 14976,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-05",
+      "price": 16207,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-06",
+      "price": 14956,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-07",
+      "price": 16389,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-08",
+      "price": 16785,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-09",
+      "price": 8487,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-10",
+      "price": 11534,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-11",
+      "price": 11177,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-12",
+      "price": 16149,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-13",
+      "price": 11311,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-14",
+      "price": 9551,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-15",
+      "price": 15960,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-16",
+      "price": 12678,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-17",
+      "price": 13641,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-18",
+      "price": 13803,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-19",
+      "price": 16459,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-20",
+      "price": 11317,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-21",
+      "price": 15561,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-22",
+      "price": 10438,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-23",
+      "price": 9266,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-24",
+      "price": 11389,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-25",
+      "price": 11707,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-26",
+      "price": 16223,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-27",
+      "price": 12350,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-28",
+      "price": 9389,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-29",
+      "price": 13824,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-30",
+      "price": 12807,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-07-31",
+      "price": 17158,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-01",
+      "price": 16189,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-02",
+      "price": 12091,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-03",
+      "price": 10651,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-04",
+      "price": 8925,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-05",
+      "price": 9363,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-06",
+      "price": 8786,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-07",
+      "price": 8809,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-08",
+      "price": 17649,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-09",
+      "price": 12985,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-10",
+      "price": 9221,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-11",
+      "price": 11572,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-12",
+      "price": 15607,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-13",
+      "price": 7877,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-14",
+      "price": 17601,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-15",
+      "price": 9739,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-16",
+      "price": 11817,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-17",
+      "price": 11844,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-18",
+      "price": 10539,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-19",
+      "price": 12897,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-20",
+      "price": 12287,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-21",
+      "price": 14616,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-22",
+      "price": 8966,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-23",
+      "price": 16645,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-24",
+      "price": 12786,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-25",
+      "price": 15387,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-26",
+      "price": 13570,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-27",
+      "price": 8840,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-28",
+      "price": 11215,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-29",
+      "price": 15952,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-30",
+      "price": 12479,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-08-31",
+      "price": 9522,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-01",
+      "price": 12335,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-02",
+      "price": 13082,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-03",
+      "price": 12943,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-04",
+      "price": 12657,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-05",
+      "price": 14995,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-06",
+      "price": 7450,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-07",
+      "price": 10328,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-08",
+      "price": 7727,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-09",
+      "price": 8222,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-10",
+      "price": 6936,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-11",
+      "price": 12591,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-12",
+      "price": 11675,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-13",
+      "price": 8226,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-14",
+      "price": 13756,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-15",
+      "price": 14495,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-16",
+      "price": 10198,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-17",
+      "price": 7916,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-18",
+      "price": 12818,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-19",
+      "price": 9099,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-20",
+      "price": 15856,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-21",
+      "price": 6967,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-22",
+      "price": 15270,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-23",
+      "price": 10515,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-24",
+      "price": 12149,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-25",
+      "price": 14766,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-26",
+      "price": 12325,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-27",
+      "price": 13453,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-28",
+      "price": 7895,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-29",
+      "price": 6780,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-09-30",
+      "price": 11483,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-01",
+      "price": 6912,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-02",
+      "price": 10777,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-03",
+      "price": 8220,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-04",
+      "price": 10120,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-05",
+      "price": 13418,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-06",
+      "price": 13825,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-07",
+      "price": 9450,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-08",
+      "price": 14217,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-09",
+      "price": 9407,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-10",
+      "price": 9670,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-11",
+      "price": 15569,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-12",
+      "price": 15319,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-13",
+      "price": 13017,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-14",
+      "price": 14460,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-15",
+      "price": 7002,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-16",
+      "price": 8379,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-17",
+      "price": 14702,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-18",
+      "price": 11126,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-19",
+      "price": 10782,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-20",
+      "price": 7310,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-21",
+      "price": 10448,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-22",
+      "price": 8218,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-23",
+      "price": 10658,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-BKK",
+      "travel_date": "2026-10-24",
+      "price": 8957,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-06-26",
+      "price": 6474,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-06-27",
+      "price": 10012,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-06-28",
+      "price": 8700,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-06-29",
+      "price": 8414,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-06-30",
+      "price": 7644,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-01",
+      "price": 14049,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-02",
+      "price": 7768,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-03",
+      "price": 15589,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-04",
+      "price": 10942,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-05",
+      "price": 11888,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-06",
+      "price": 7318,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-07",
+      "price": 11353,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-08",
+      "price": 9572,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-09",
+      "price": 13488,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-10",
+      "price": 10106,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-11",
+      "price": 10147,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-12",
+      "price": 15114,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-13",
+      "price": 9703,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-14",
+      "price": 12846,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-15",
+      "price": 8140,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-16",
+      "price": 6809,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-17",
+      "price": 11570,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-18",
+      "price": 7200,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-19",
+      "price": 9462,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-20",
+      "price": 7593,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-21",
+      "price": 7633,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-22",
+      "price": 15279,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-23",
+      "price": 9287,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-24",
+      "price": 7303,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-25",
+      "price": 10230,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-26",
+      "price": 8356,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-27",
+      "price": 11009,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-28",
+      "price": 11366,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-29",
+      "price": 14881,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-30",
+      "price": 7267,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-07-31",
+      "price": 14850,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-01",
+      "price": 15257,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-02",
+      "price": 8496,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-03",
+      "price": 11946,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-04",
+      "price": 13344,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-05",
+      "price": 8863,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-06",
+      "price": 12697,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-07",
+      "price": 8452,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-08",
+      "price": 7998,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-09",
+      "price": 7507,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-10",
+      "price": 8451,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-11",
+      "price": 12062,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-12",
+      "price": 14203,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-13",
+      "price": 14562,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-14",
+      "price": 14360,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-15",
+      "price": 11879,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-16",
+      "price": 7726,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-17",
+      "price": 12627,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-18",
+      "price": 7364,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-19",
+      "price": 7775,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-20",
+      "price": 12770,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-21",
+      "price": 8142,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-22",
+      "price": 11737,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-23",
+      "price": 16099,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-24",
+      "price": 8889,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-25",
+      "price": 9990,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-26",
+      "price": 10503,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-27",
+      "price": 9565,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-28",
+      "price": 11718,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-29",
+      "price": 9291,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-30",
+      "price": 11932,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-08-31",
+      "price": 8850,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-01",
+      "price": 7118,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-02",
+      "price": 11344,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-03",
+      "price": 6288,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-04",
+      "price": 6720,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-05",
+      "price": 8794,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-06",
+      "price": 8191,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-07",
+      "price": 7135,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-08",
+      "price": 5087,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-09",
+      "price": 5646,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-10",
+      "price": 13484,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-11",
+      "price": 14140,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-12",
+      "price": 8158,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-13",
+      "price": 10301,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-14",
+      "price": 10585,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-15",
+      "price": 7467,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-16",
+      "price": 11977,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-17",
+      "price": 9380,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-18",
+      "price": 12748,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-19",
+      "price": 12149,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-20",
+      "price": 13604,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-21",
+      "price": 7355,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-22",
+      "price": 8582,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-23",
+      "price": 8292,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-24",
+      "price": 4962,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-25",
+      "price": 9912,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-26",
+      "price": 7728,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-27",
+      "price": 11517,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-28",
+      "price": 6493,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-29",
+      "price": 6778,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-09-30",
+      "price": 9104,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-01",
+      "price": 12353,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-02",
+      "price": 11108,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-03",
+      "price": 9582,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-04",
+      "price": 6727,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-05",
+      "price": 8569,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-06",
+      "price": 13720,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-07",
+      "price": 6309,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-08",
+      "price": 8646,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-09",
+      "price": 11097,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-10",
+      "price": 6844,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-11",
+      "price": 7434,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-12",
+      "price": 5741,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-13",
+      "price": 6124,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-14",
+      "price": 10908,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-15",
+      "price": 12469,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-16",
+      "price": 7855,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-17",
+      "price": 7372,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-18",
+      "price": 13105,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-19",
+      "price": 5748,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-20",
+      "price": 9609,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-21",
+      "price": 7924,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-22",
+      "price": 6111,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-23",
+      "price": 7800,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-HKG",
+      "travel_date": "2026-10-24",
+      "price": 6333,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-06-26",
+      "price": 12969,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-06-27",
+      "price": 7705,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-06-28",
+      "price": 9638,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-06-29",
+      "price": 14681,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-06-30",
+      "price": 12228,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-01",
+      "price": 14562,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-02",
+      "price": 13438,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-03",
+      "price": 14006,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-04",
+      "price": 12910,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-05",
+      "price": 15911,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-06",
+      "price": 16066,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-07",
+      "price": 7562,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-08",
+      "price": 11221,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-09",
+      "price": 15821,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-10",
+      "price": 12981,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-11",
+      "price": 15366,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-12",
+      "price": 12871,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-13",
+      "price": 11042,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-14",
+      "price": 10408,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-15",
+      "price": 10342,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-16",
+      "price": 13652,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-17",
+      "price": 11523,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-18",
+      "price": 14550,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-19",
+      "price": 9372,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-20",
+      "price": 12987,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-21",
+      "price": 15582,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-22",
+      "price": 10084,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-23",
+      "price": 14809,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-24",
+      "price": 13490,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-25",
+      "price": 16641,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-26",
+      "price": 11461,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-27",
+      "price": 7689,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-28",
+      "price": 11108,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-29",
+      "price": 14319,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-30",
+      "price": 9014,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-07-31",
+      "price": 11641,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-01",
+      "price": 10436,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-02",
+      "price": 15614,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-03",
+      "price": 7885,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-04",
+      "price": 12119,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-05",
+      "price": 7895,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-06",
+      "price": 15733,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-07",
+      "price": 12253,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-08",
+      "price": 14385,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-09",
+      "price": 16025,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-10",
+      "price": 11690,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-11",
+      "price": 12951,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-12",
+      "price": 8777,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-13",
+      "price": 10557,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-14",
+      "price": 17377,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-15",
+      "price": 10348,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-16",
+      "price": 17305,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-17",
+      "price": 12865,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-18",
+      "price": 10281,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-19",
+      "price": 15299,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-20",
+      "price": 12590,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-21",
+      "price": 15230,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-22",
+      "price": 12029,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-23",
+      "price": 16453,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-24",
+      "price": 13104,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-25",
+      "price": 15754,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-26",
+      "price": 9101,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-27",
+      "price": 10914,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-28",
+      "price": 10907,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-29",
+      "price": 10885,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-30",
+      "price": 15536,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-08-31",
+      "price": 9868,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-01",
+      "price": 9454,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-02",
+      "price": 9879,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-03",
+      "price": 9083,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-04",
+      "price": 15188,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-05",
+      "price": 8655,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-06",
+      "price": 14874,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-07",
+      "price": 11040,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-08",
+      "price": 6274,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-09",
+      "price": 10145,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-10",
+      "price": 8203,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-11",
+      "price": 8830,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-12",
+      "price": 11847,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-13",
+      "price": 14978,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-14",
+      "price": 8240,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-15",
+      "price": 9138,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-16",
+      "price": 13832,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-17",
+      "price": 13201,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-18",
+      "price": 15927,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-19",
+      "price": 9519,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-20",
+      "price": 13790,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-21",
+      "price": 11188,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-22",
+      "price": 8660,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-23",
+      "price": 6697,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-24",
+      "price": 8174,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-25",
+      "price": 14093,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-26",
+      "price": 14251,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-27",
+      "price": 14506,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-28",
+      "price": 8006,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-29",
+      "price": 11491,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-09-30",
+      "price": 8731,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-01",
+      "price": 6980,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-02",
+      "price": 8376,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-03",
+      "price": 12401,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-04",
+      "price": 13729,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-05",
+      "price": 10231,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-06",
+      "price": 13290,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-07",
+      "price": 6148,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-08",
+      "price": 9223,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-09",
+      "price": 12190,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-10",
+      "price": 11388,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-11",
+      "price": 12489,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-12",
+      "price": 7494,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-13",
+      "price": 8768,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-14",
+      "price": 9026,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-15",
+      "price": 10036,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-16",
+      "price": 10348,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-17",
+      "price": 12601,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-18",
+      "price": 13283,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-19",
+      "price": 9635,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-20",
+      "price": 12636,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-21",
+      "price": 7990,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-22",
+      "price": 12982,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-23",
+      "price": 15157,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-ICN",
+      "travel_date": "2026-10-24",
+      "price": 8026,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-06-26",
+      "price": 13525,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-06-27",
+      "price": 12600,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-06-28",
+      "price": 16538,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-06-29",
+      "price": 14549,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-06-30",
+      "price": 14684,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-01",
+      "price": 12069,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-02",
+      "price": 15005,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-03",
+      "price": 10219,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-04",
+      "price": 14929,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-05",
+      "price": 17974,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-06",
+      "price": 16887,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-07",
+      "price": 12228,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-08",
+      "price": 15584,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-09",
+      "price": 17028,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-10",
+      "price": 15888,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-11",
+      "price": 16398,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-12",
+      "price": 16820,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-13",
+      "price": 16222,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-14",
+      "price": 13021,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-15",
+      "price": 12201,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-16",
+      "price": 10446,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-17",
+      "price": 13016,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-18",
+      "price": 12529,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-19",
+      "price": 18263,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-20",
+      "price": 10993,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-21",
+      "price": 12689,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-22",
+      "price": 11855,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-23",
+      "price": 12164,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-24",
+      "price": 12921,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-25",
+      "price": 13106,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-26",
+      "price": 12200,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-27",
+      "price": 11378,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-28",
+      "price": 11843,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-29",
+      "price": 11495,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-30",
+      "price": 8543,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-07-31",
+      "price": 9975,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-01",
+      "price": 11039,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-02",
+      "price": 15350,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-03",
+      "price": 15566,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-04",
+      "price": 12458,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-05",
+      "price": 14257,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-06",
+      "price": 15623,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-07",
+      "price": 17184,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-08",
+      "price": 10510,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-09",
+      "price": 11035,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-10",
+      "price": 8725,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-11",
+      "price": 14721,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-12",
+      "price": 8703,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-13",
+      "price": 12989,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-14",
+      "price": 16694,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-15",
+      "price": 12838,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-16",
+      "price": 9307,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-17",
+      "price": 8687,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-18",
+      "price": 9881,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-19",
+      "price": 11334,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-20",
+      "price": 8492,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-21",
+      "price": 13853,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-22",
+      "price": 15907,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-23",
+      "price": 17740,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-24",
+      "price": 8663,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-25",
+      "price": 11153,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-26",
+      "price": 9141,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-27",
+      "price": 16873,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-28",
+      "price": 14458,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-29",
+      "price": 14435,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-30",
+      "price": 14150,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-08-31",
+      "price": 16547,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-01",
+      "price": 7908,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-02",
+      "price": 12250,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-03",
+      "price": 14776,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-04",
+      "price": 11057,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-05",
+      "price": 9499,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-06",
+      "price": 12827,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-07",
+      "price": 15598,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-08",
+      "price": 9814,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-09",
+      "price": 7162,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-10",
+      "price": 13395,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-11",
+      "price": 8611,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-12",
+      "price": 10276,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-13",
+      "price": 9288,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-14",
+      "price": 9965,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-15",
+      "price": 12774,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-16",
+      "price": 9425,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-17",
+      "price": 13419,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-18",
+      "price": 15135,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-19",
+      "price": 14559,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-20",
+      "price": 15325,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-21",
+      "price": 11262,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-22",
+      "price": 10928,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-23",
+      "price": 13428,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-24",
+      "price": 9480,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-25",
+      "price": 14437,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-26",
+      "price": 11694,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-27",
+      "price": 9668,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-28",
+      "price": 9253,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-29",
+      "price": 10871,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-09-30",
+      "price": 12486,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-01",
+      "price": 11570,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-02",
+      "price": 13698,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-03",
+      "price": 16439,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-04",
+      "price": 16116,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-05",
+      "price": 11563,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-06",
+      "price": 13732,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-07",
+      "price": 13433,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-08",
+      "price": 15079,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-09",
+      "price": 15679,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-10",
+      "price": 15882,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-11",
+      "price": 15257,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-12",
+      "price": 8677,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-13",
+      "price": 12059,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-14",
+      "price": 9655,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-15",
+      "price": 10093,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-16",
+      "price": 14627,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-17",
+      "price": 9655,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-18",
+      "price": 11171,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-19",
+      "price": 7955,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-20",
+      "price": 15256,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-21",
+      "price": 9690,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-22",
+      "price": 7445,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-23",
+      "price": 14455,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-NRT",
+      "travel_date": "2026-10-24",
+      "price": 14925,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-06-26",
+      "price": 10256,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-06-27",
+      "price": 16508,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-06-28",
+      "price": 9971,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-06-29",
+      "price": 11299,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-06-30",
+      "price": 13038,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-01",
+      "price": 14936,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-02",
+      "price": 9119,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-03",
+      "price": 17777,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-04",
+      "price": 11777,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-05",
+      "price": 13975,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-06",
+      "price": 15307,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-07",
+      "price": 13948,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-08",
+      "price": 14196,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-09",
+      "price": 9482,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-10",
+      "price": 13501,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-11",
+      "price": 15637,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-12",
+      "price": 11317,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-13",
+      "price": 10927,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-14",
+      "price": 8380,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-15",
+      "price": 16475,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-16",
+      "price": 16022,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-17",
+      "price": 11163,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-18",
+      "price": 12967,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-19",
+      "price": 10111,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-20",
+      "price": 12223,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-21",
+      "price": 10347,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-22",
+      "price": 12926,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-23",
+      "price": 12846,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-24",
+      "price": 13788,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-25",
+      "price": 9261,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-26",
+      "price": 10853,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-27",
+      "price": 15010,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-28",
+      "price": 13711,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-29",
+      "price": 14569,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-30",
+      "price": 15933,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-07-31",
+      "price": 16546,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-01",
+      "price": 12396,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-02",
+      "price": 17612,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-03",
+      "price": 15454,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-04",
+      "price": 8451,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-05",
+      "price": 16821,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-06",
+      "price": 13033,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-07",
+      "price": 16818,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-08",
+      "price": 16454,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-09",
+      "price": 16185,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-10",
+      "price": 13074,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-11",
+      "price": 11083,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-12",
+      "price": 8597,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-13",
+      "price": 11261,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-14",
+      "price": 13420,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-15",
+      "price": 9209,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-16",
+      "price": 16461,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-17",
+      "price": 14038,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-18",
+      "price": 14953,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-19",
+      "price": 9209,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-20",
+      "price": 14932,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-21",
+      "price": 9392,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-22",
+      "price": 9498,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-23",
+      "price": 10231,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-24",
+      "price": 15653,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-25",
+      "price": 13687,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-26",
+      "price": 14247,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-27",
+      "price": 11086,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-28",
+      "price": 15472,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-29",
+      "price": 17546,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-30",
+      "price": 10036,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-08-31",
+      "price": 12386,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-01",
+      "price": 10404,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-02",
+      "price": 7693,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-03",
+      "price": 15416,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-04",
+      "price": 13884,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-05",
+      "price": 9061,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-06",
+      "price": 15653,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-07",
+      "price": 9247,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-08",
+      "price": 13146,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-09",
+      "price": 11419,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-10",
+      "price": 7702,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-11",
+      "price": 15937,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-12",
+      "price": 10916,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-13",
+      "price": 14690,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-14",
+      "price": 7165,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-15",
+      "price": 7712,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-16",
+      "price": 14848,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-17",
+      "price": 8222,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-18",
+      "price": 8427,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-19",
+      "price": 10425,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-20",
+      "price": 10982,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-21",
+      "price": 7032,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-22",
+      "price": 14562,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-23",
+      "price": 7501,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-24",
+      "price": 10764,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-25",
+      "price": 13246,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-26",
+      "price": 8346,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-27",
+      "price": 10719,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-28",
+      "price": 9101,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-29",
+      "price": 10697,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-09-30",
+      "price": 14180,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-01",
+      "price": 7766,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-02",
+      "price": 8690,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-03",
+      "price": 15803,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-04",
+      "price": 9744,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-05",
+      "price": 13966,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-06",
+      "price": 8614,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-07",
+      "price": 15743,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-08",
+      "price": 10007,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-09",
+      "price": 14539,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-10",
+      "price": 15347,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-11",
+      "price": 12989,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-12",
+      "price": 15076,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-13",
+      "price": 10827,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-14",
+      "price": 13065,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-15",
+      "price": 7003,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-16",
+      "price": 9616,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-17",
+      "price": 10817,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-18",
+      "price": 12662,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-19",
+      "price": 9075,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-20",
+      "price": 9597,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-21",
+      "price": 12848,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-22",
+      "price": 11769,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-23",
+      "price": 11984,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    },
+    {
+      "route": "TPE-SIN",
+      "travel_date": "2026-10-24",
+      "price": 15604,
+      "currency": "TWD",
+      "source": "mock-fallback",
+      "fetched_at": "2026-06-26T09:23:23+00:00"
+    }
+  ]
+}

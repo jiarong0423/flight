@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>航班價格日曆</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">GitHub Pages static cache</p>
+        <h1>航班價格日曆</h1>
+      </div>
+      <div class="sync-status">
+        <span>最後更新</span>
+        <strong id="updatedAt">讀取中</strong>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="toolbar">
+        <label>
+          航線
+          <select id="routeSelect"></select>
+        </label>
+        <label>
+          起始日期
+          <input id="fromDate" type="date" />
+        </label>
+        <label>
+          顯示天數
+          <select id="rangeSelect">
+            <option value="30">30 天</option>
+            <option value="60">60 天</option>
+            <option value="90">90 天</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="summary">
+        <article>
+          <span>資料筆數</span>
+          <strong id="recordCount">0</strong>
+        </article>
+        <article>
+          <span>最低價格</span>
+          <strong id="lowestPrice">-</strong>
+        </article>
+        <article>
+          <span>平均價格</span>
+          <strong id="averagePrice">-</strong>
+        </article>
+        <article>
+          <span>資料來源</span>
+          <strong id="sourceName">static</strong>
+        </article>
+      </section>
+
+      <section class="calendar-section">
+        <div class="section-heading">
+          <h2 id="calendarTitle">日曆</h2>
+          <p>資料由 GitHub Actions 定期推送更新</p>
+        </div>
+        <div class="weekday-row">
+          <span>日</span>
+          <span>一</span>
+          <span>二</span>
+          <span>三</span>
+          <span>四</span>
+          <span>五</span>
+          <span>六</span>
+        </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
