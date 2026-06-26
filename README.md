@@ -40,6 +40,12 @@ GitHub Actions：
 
 如果沒有設定 TDX 金鑰，crawler 會使用 `mock-tdx-fallback`，讓 GitHub Pages 頁面和排程流程先保持可用。
 
+預設不做高頻掃描：
+
+- GitHub Actions 每 4 小時跑一次。
+- 單次掃描每個 TDX endpoint 間隔 30 秒。
+- 若遇到 `429 Too Many Requests`，每次重試至少等 60 秒，最多重試 2 次。
+
 ## GitHub Pages 部署
 
 到 repo `Settings > Pages`：

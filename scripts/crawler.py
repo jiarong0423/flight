@@ -7,6 +7,7 @@ import json
 import os
 import random
 import re
+import ssl
 import time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -38,13 +39,22 @@ def load_config() -> dict[str, Any]:
     return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
 
 
+def tls_context() -> ssl.SSLContext:
+    context = ssl.create_default_context()
+    if hasattr(ssl, "VERIFY_X509_STRICT"):
+        context.verify_flags &= ~ssl.VERIFY_X509_STRICT
+    return context
+
+
 def request_text(url: str, timeout_seconds: int, headers: dict[str, str] | None = None) -> str:
     request = Request(url, headers=headers or {})
     try:
-        with urlopen(request, timeout=timeout_seconds) as response:
+        with urlopen(request, timeout=timeout_seconds, context=tls_context()) as response:
             charset = response.headers.get_content_charset() or "utf-8"
             return response.read().decode(charset, errors="replace")
-    except (HTTPError, URLError, TimeoutError) as exc:
+    except HTTPError as exc:
+        raise CrawlError(f"Fetch failed: {url}: HTTP {exc.code}") from exc
+    except (URLError, TimeoutError) as exc:
         raise CrawlError(f"Fetch failed: {url}: {exc}") from exc
 
 
@@ -61,7 +71,7 @@ def request_form_json(url: str, form: dict[str, str], timeout_seconds: int) -> A
         method="POST",
     )
     try:
-        with urlopen(request, timeout=timeout_seconds) as response:
+        with urlopen(request, timeout=timeout_seconds, context=tls_context()) as response:
             charset = response.headers.get_content_charset() or "utf-8"
             return json.loads(response.read().decode(charset, errors="replace"))
     except (HTTPError, URLError, TimeoutError) as exc:
@@ -102,6 +112,8 @@ class TdxClient:
         self.user_agent = config.get("user_agent", "flight-cache-crawler/1.0")
         self.client_id = os.getenv(config.get("client_id_env", "TDX_CLIENT_ID"), "")
         self.client_secret = os.getenv(config.get("client_secret_env", "TDX_CLIENT_SECRET"), "")
+        self.max_retries = int(config.get("max_retries", 2))
+        self.retry_delay_seconds = float(config.get("retry_delay_seconds", 60.0))
         self._token: str | None = None
 
     def token(self) -> str:
@@ -124,15 +136,22 @@ class TdxClient:
     def fids_airport(self, airport: str, direction: str, top: int) -> list[dict[str, Any]]:
         url = TDX_AIR_FIDS_URL.format(direction=direction, airport=airport)
         url = f"{url}?{urlencode({'$top': top, '$format': 'JSON'})}"
-        payload = request_json(
-            url,
-            self.timeout_seconds,
-            {
-                "Authorization": f"Bearer {self.token()}",
-                "User-Agent": self.user_agent,
-                "Accept": "application/json",
-            },
-        )
+        headers = {
+            "Authorization": f"Bearer {self.token()}",
+            "User-Agent": self.user_agent,
+            "Accept": "application/json",
+        }
+        payload = None
+        for attempt in range(self.max_retries + 1):
+            try:
+                payload = request_json(url, self.timeout_seconds, headers)
+                break
+            except CrawlError as exc:
+                if "HTTP 429" not in str(exc) or attempt == self.max_retries:
+                    raise
+                sleep_seconds = self.retry_delay_seconds * (attempt + 1)
+                print(f"WARN rate limited for {airport} {direction}; retrying in {sleep_seconds:.0f}s")
+                time.sleep(sleep_seconds)
         if not isinstance(payload, list):
             raise CrawlError(f"TDX FIDS response is not a list: {airport} {direction}")
         save_raw(f"tdx-{airport}-{direction}", payload)
@@ -246,17 +265,18 @@ def crawl_tdx_fids(config: dict[str, Any] | None = None) -> list[dict[str, Any]]
     client = TdxClient(config)
     items: list[dict[str, Any]] = []
 
-    try:
-        for airport in airports:
-            for direction in directions:
+    for airport in airports:
+        for direction in directions:
+            try:
                 payload = client.fids_airport(airport, direction, top)
                 items.extend(normalize_tdx_record(row, airport, direction) for row in payload)
+            except Exception as exc:
+                print(f"WARN skipped {airport} {direction}: {exc}")
                 time.sleep(delay)
-    except Exception as exc:
-        if config.get("mock_fallback", True):
-            print(f"WARN using mock fallback: {exc}")
-            return mock_tdx_records(config)
-        raise
+
+    if not items and config.get("mock_fallback", True):
+        print("WARN using mock fallback: no TDX records fetched")
+        return mock_tdx_records(config)
 
     return items
 
