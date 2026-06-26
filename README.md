@@ -4,6 +4,11 @@
 
 - `index.html`, `styles.css`, `app.js`: 前端航班看板。
 - `data/flights.json`, `data/flights.csv`: 靜態航班快取。
+- `data/schedule.json`, `data/schedule.csv`: 固定航班班表底表。
+- `data/changes.json`, `data/changes.csv`: 只保存相對固定班表的變動項。
+- `data/offers.json`, `data/offers.csv`: 票價 offer 標準化資料。
+- `config/lookups.json`: 機場、方向、狀態、行李欄位查找表。
+- `config/airline_rules.json`: 航空公司中文名與規則欄位查找表。
 - `scripts/crawler.py`: TDX 航空 FIDS crawler。
 - `scripts/update_data.py`: 產生靜態 JSON / CSV。
 - `scripts/local_scheduler.py`: 本地常駐排程，掃描資料、有變動才 commit/push。
@@ -13,7 +18,7 @@
 
 ## 資料來源
 
-目前接的是交通部 TDX 運輸資料流通服務的航空 FIDS 機場出發/抵達資料。TDX 需要 API Key，所以不要把金鑰寫進 repo。
+目前架構以固定班表為底，變動項疊加顯示。TDX 即時 FIDS 可作為狀態補充，但預設關閉，避免高頻請求。TDX 需要 API Key，所以不要把金鑰寫進 repo。
 
 需要設定：
 
@@ -94,3 +99,13 @@ powershell -ExecutionPolicy Bypass -File scripts\install_windows_task.ps1
   "directions": ["Departure", "Arrival"]
 }
 ```
+
+## 固定欄位策略
+
+前端只讀標準欄位，不直接解析來源欄位：
+
+- 航空公司中文由 `config/airline_rules.json` 對應成 `airline_name_zh`。
+- 機場中文由 `config/lookups.json` 對應成 `origin_name_zh` / `destination_name_zh`。
+- 固定班表存在 `data/schedule.json`。
+- 票價、行李、轉機等變動存在 `data/changes.json`。
+- 月曆以 `schedule + changes` 疊加顯示，有變動的日期用氣泡標示。

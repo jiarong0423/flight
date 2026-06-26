@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-06-26",
+  "airports": {
+    "TPE": { "zh_tw": "桃園", "en": "Taoyuan", "country": "TW" },
+    "TSA": { "zh_tw": "松山", "en": "Taipei Songshan", "country": "TW" },
+    "KHH": { "zh_tw": "高雄", "en": "Kaohsiung", "country": "TW" },
+    "RMQ": { "zh_tw": "臺中", "en": "Taichung", "country": "TW" },
+    "HUN": { "zh_tw": "花蓮", "en": "Hualien", "country": "TW" },
+    "TTT": { "zh_tw": "臺東", "en": "Taitung", "country": "TW" },
+    "MZG": { "zh_tw": "馬公", "en": "Magong", "country": "TW" },
+    "KNH": { "zh_tw": "金門", "en": "Kinmen", "country": "TW" },
+    "LZN": { "zh_tw": "南竿", "en": "Nangan", "country": "TW" },
+    "NRT": { "zh_tw": "東京成田", "en": "Tokyo Narita", "country": "JP" },
+    "HND": { "zh_tw": "東京羽田", "en": "Tokyo Haneda", "country": "JP" },
+    "KIX": { "zh_tw": "大阪關西", "en": "Osaka Kansai", "country": "JP" },
+    "ICN": { "zh_tw": "首爾仁川", "en": "Seoul Incheon", "country": "KR" },
+    "GMP": { "zh_tw": "首爾金浦", "en": "Seoul Gimpo", "country": "KR" },
+    "HKG": { "zh_tw": "香港", "en": "Hong Kong", "country": "HK" },
+    "BKK": { "zh_tw": "曼谷素萬那普", "en": "Bangkok Suvarnabhumi", "country": "TH" },
+    "DMK": { "zh_tw": "曼谷廊曼", "en": "Bangkok Don Mueang", "country": "TH" },
+    "SIN": { "zh_tw": "新加坡樟宜", "en": "Singapore Changi", "country": "SG" },
+    "KUL": { "zh_tw": "吉隆坡", "en": "Kuala Lumpur", "country": "MY" },
+    "MNL": { "zh_tw": "馬尼拉", "en": "Manila", "country": "PH" },
+    "SGN": { "zh_tw": "胡志明市", "en": "Ho Chi Minh City", "country": "VN" },
+    "HAN": { "zh_tw": "河內", "en": "Hanoi", "country": "VN" }
+  },
+  "directions": {
+    "Departure": "departure",
+    "Arrival": "arrival",
+    "D": "departure",
+    "A": "arrival",
+    "PD": "departure",
+    "PA": "arrival",
+    "CD": "departure",
+    "CA": "arrival"
+  },
+  "status_aliases": {
+    "準時": "on_time",
+    "On Time": "on_time",
+    "報到": "check_in",
+    "Boarding": "boarding",
+    "已飛": "departed",
+    "Departed": "departed",
+    "抵達": "arrived",
+    "Arrived": "arrived",
+    "延誤": "delayed",
+    "Delayed": "delayed",
+    "取消": "cancelled",
+    "Cancelled": "cancelled"
+  },
+  "baggage_aliases": {
+    "checked_baggage_weight_kg": [
+      "checked_baggage_weight_kg",
+      "checked_baggage_kg",
+      "checked_kg",
+      "baggage.checked_kg",
+      "托運公斤",
+      "托運行李公斤"
+    ],
+    "checked_baggage_pieces": [
+      "checked_baggage_pieces",
+      "checked_pieces",
+      "baggage.checked_pieces",
+      "托運件數"
+    ],
+    "carry_on_weight_kg": [
+      "baggage_carry_on_weight_kg",
+      "carry_on_kg",
+      "baggage.carry_on_kg",
+      "手提公斤",
+      "手提行李公斤"
+    ]
+  }
+}

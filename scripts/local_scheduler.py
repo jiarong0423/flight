@@ -9,7 +9,16 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_FILES = ["data/flights.json", "data/flights.csv"]
+DATA_FILES = [
+    "data/flights.json",
+    "data/flights.csv",
+    "data/offers.json",
+    "data/offers.csv",
+    "data/schedule.json",
+    "data/schedule.csv",
+    "data/changes.json",
+    "data/changes.csv",
+]
 
 
 def run(command: list[str]) -> subprocess.CompletedProcess[str]:

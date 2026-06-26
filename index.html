@@ -3,79 +3,68 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>機場即時航班看板</title>
+    <title>航班價格月曆</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">TDX static cache / GitHub Pages</p>
-        <h1>機場即時航班看板</h1>
-      </div>
-      <div class="sync-status">
-        <span>最後更新</span>
-        <strong id="updatedAt">讀取中</strong>
-      </div>
-    </header>
+    <main class="app-shell">
+      <header class="calendar-header">
+        <div>
+          <p class="eyebrow">Fixed schedule + change overlay</p>
+          <h1>航班價格月曆</h1>
+        </div>
+        <div class="sync-status">
+          <span>最後更新</span>
+          <strong id="updatedAt">讀取中</strong>
+        </div>
+      </header>
 
-    <main class="layout">
       <section class="toolbar">
         <label>
-          機場
-          <select id="airportSelect"></select>
+          航線
+          <select id="routeSelect"></select>
         </label>
         <label>
-          方向
-          <select id="directionSelect">
-            <option value="departure">出發</option>
-            <option value="arrival">抵達</option>
-          </select>
-        </label>
-        <label>
-          搜尋
-          <input id="searchInput" type="search" placeholder="航班、航空、目的地" />
+          月份
+          <input id="monthInput" type="month" />
         </label>
       </section>
 
-      <section class="summary">
-        <article>
-          <span>航班筆數</span>
-          <strong id="recordCount">0</strong>
-        </article>
-        <article>
-          <span>延誤/異常</span>
-          <strong id="delayCount">0</strong>
-        </article>
-        <article>
-          <span>已飛/抵達</span>
-          <strong id="doneCount">0</strong>
-        </article>
-        <article>
-          <span>資料來源</span>
-          <strong id="sourceName">TDX</strong>
-        </article>
-      </section>
-
-      <section class="board-section">
-        <div class="section-heading">
-          <h2 id="boardTitle">航班列表</h2>
-          <p>本頁讀取靜態 JSON，資料由本地排程或 GitHub Actions 更新</p>
+      <section class="calendar-card">
+        <div class="month-title">
+          <button id="prevMonth" type="button" aria-label="上一月">‹</button>
+          <h2 id="monthTitle">月曆</h2>
+          <button id="nextMonth" type="button" aria-label="下一月">›</button>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>表定</th>
-                <th>預計/實際</th>
-                <th>航班</th>
-                <th>航空</th>
-                <th id="routeHeader">目的地</th>
-                <th>航廈/登機門</th>
-                <th>狀態</th>
-              </tr>
-            </thead>
-            <tbody id="flightRows"></tbody>
-          </table>
+        <div class="weekday-row">
+          <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+        </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+      </section>
+
+      <section class="detail-panel">
+        <button id="detailToggle" class="detail-toggle" type="button">
+          <span id="detailTitle">選擇日期</span>
+          <span id="detailCount">0 筆</span>
+        </button>
+        <div id="detailBody" class="detail-body">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>時間</th>
+                  <th>航班</th>
+                  <th>價格</th>
+                  <th>轉機</th>
+                  <th>托運</th>
+                  <th>手提</th>
+                  <th>狀態</th>
+                  <th>連結</th>
+                </tr>
+              </thead>
+              <tbody id="detailRows"></tbody>
+            </table>
+          </div>
         </div>
       </section>
     </main>
