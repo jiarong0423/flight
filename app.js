@@ -1,36 +1,38 @@
-const routeSelect = document.querySelector("#routeSelect");
-const fromDate = document.querySelector("#fromDate");
-const rangeSelect = document.querySelector("#rangeSelect");
+const airportSelect = document.querySelector("#airportSelect");
+const directionSelect = document.querySelector("#directionSelect");
+const searchInput = document.querySelector("#searchInput");
 const updatedAt = document.querySelector("#updatedAt");
 const recordCount = document.querySelector("#recordCount");
-const lowestPrice = document.querySelector("#lowestPrice");
-const averagePrice = document.querySelector("#averagePrice");
+const delayCount = document.querySelector("#delayCount");
+const doneCount = document.querySelector("#doneCount");
 const sourceName = document.querySelector("#sourceName");
-const calendarTitle = document.querySelector("#calendarTitle");
-const calendarGrid = document.querySelector("#calendarGrid");
+const boardTitle = document.querySelector("#boardTitle");
+const routeHeader = document.querySelector("#routeHeader");
+const flightRows = document.querySelector("#flightRows");
 
 let flightData = null;
 
-function isoDate(date) {
-  return date.toISOString().slice(0, 10);
+const airportNames = {
+  TPE: "桃園",
+  TSA: "松山",
+  KHH: "高雄",
+  RMQ: "臺中",
+  HUN: "花蓮",
+  TTT: "臺東",
+  MZG: "馬公",
+  KNH: "金門",
+  LZN: "南竿",
+};
+
+function text(value) {
+  return String(value || "").trim();
 }
 
-function addDays(date, days) {
-  const next = new Date(date);
-  next.setDate(next.getDate() + days);
-  return next;
-}
-
-function parseLocalDate(value) {
-  return new Date(`${value}T00:00:00`);
-}
-
-function money(value, currency) {
-  return new Intl.NumberFormat("zh-TW", {
-    style: "currency",
-    currency,
-    maximumFractionDigits: 0,
-  }).format(value);
+function statusClass(remark) {
+  const value = text(remark);
+  if (/延|取消|異常|關閉|Delay|Cancel/i.test(value)) return "badge warn";
+  if (/已飛|抵達|到達|Departed|Arrived/i.test(value)) return "badge done";
+  return "badge";
 }
 
 async function loadData() {
@@ -41,93 +43,89 @@ async function loadData() {
   flightData = await response.json();
 }
 
-function setRouteOptions() {
-  routeSelect.innerHTML = "";
-  for (const route of flightData.routes) {
+function setAirportOptions() {
+  airportSelect.innerHTML = "";
+  for (const airport of flightData.airports) {
     const option = document.createElement("option");
-    option.value = route;
-    option.textContent = route;
-    routeSelect.append(option);
+    option.value = airport;
+    option.textContent = `${airport} ${airportNames[airport] || ""}`.trim();
+    airportSelect.append(option);
   }
 }
 
-function dateCells(start, end, items) {
-  const map = new Map(items.map((item) => [item.travel_date, item]));
-  const cells = [];
-  for (let index = 0; index < start.getDay(); index += 1) {
-    cells.push({ empty: true });
-  }
-  for (let cursor = new Date(start); cursor <= end; cursor = addDays(cursor, 1)) {
-    cells.push({ date: new Date(cursor), item: map.get(isoDate(cursor)) });
-  }
-  return cells;
+function currentItems() {
+  const airport = airportSelect.value;
+  const direction = directionSelect.value;
+  const query = searchInput.value.trim().toLowerCase();
+  return flightData.items
+    .filter((item) => item.airport === airport && item.direction === direction)
+    .filter((item) => {
+      if (!query) return true;
+      return [
+        item.flight_number,
+        item.airline_id,
+        item.airline_name,
+        item.departure_airport,
+        item.departure_airport_name,
+        item.arrival_airport,
+        item.arrival_airport_name,
+        item.remark,
+      ]
+        .join(" ")
+        .toLowerCase()
+        .includes(query);
+    });
 }
 
 function render() {
-  const route = routeSelect.value;
-  const start = parseLocalDate(fromDate.value);
-  const days = Number(rangeSelect.value);
-  const end = addDays(start, days - 1);
-  const items = flightData.items.filter((item) => {
-    const travelDate = parseLocalDate(item.travel_date);
-    return item.route === route && travelDate >= start && travelDate <= end;
-  });
+  const airport = airportSelect.value;
+  const direction = directionSelect.value;
+  const items = currentItems();
+  const isDeparture = direction === "departure";
 
   updatedAt.textContent = new Date(flightData.generated_at).toLocaleString("zh-TW");
   recordCount.textContent = items.length;
+  delayCount.textContent = items.filter((item) => /延|取消|異常|Delay|Cancel/i.test(text(item.remark))).length;
+  doneCount.textContent = items.filter((item) => /已飛|抵達|到達|Departed|Arrived/i.test(text(item.remark))).length;
   sourceName.textContent = flightData.source;
-  calendarTitle.textContent = `${route} 價格日曆`;
+  boardTitle.textContent = `${airport} ${airportNames[airport] || ""} ${isDeparture ? "出發" : "抵達"}`;
+  routeHeader.textContent = isDeparture ? "目的地" : "出發地";
 
-  const prices = items.map((item) => item.price);
-  if (prices.length > 0) {
-    const lowest = Math.min(...prices);
-    const average = Math.round(prices.reduce((sum, value) => sum + value, 0) / prices.length);
-    lowestPrice.textContent = money(lowest, flightData.currency);
-    averagePrice.textContent = money(average, flightData.currency);
-  } else {
-    lowestPrice.textContent = "-";
-    averagePrice.textContent = "-";
+  flightRows.innerHTML = "";
+  for (const item of items) {
+    const row = document.createElement("tr");
+    const routeCode = isDeparture ? item.arrival_airport : item.departure_airport;
+    const routeName = isDeparture ? item.arrival_airport_name : item.departure_airport_name;
+    const actual = item.actual_time || item.estimated_time || "-";
+    const terminalGate = [item.terminal && `T${item.terminal}`, item.gate].filter(Boolean).join(" / ") || "-";
+    row.innerHTML = `
+      <td>${text(item.scheduled_time) || "-"}</td>
+      <td>${text(actual)}</td>
+      <td><strong>${text(item.flight_number) || "-"}</strong></td>
+      <td>${text(item.airline_name) || text(item.airline_id) || "-"}</td>
+      <td>${text(routeCode)} ${text(routeName)}</td>
+      <td>${terminalGate}</td>
+      <td><span class="${statusClass(item.remark)}">${text(item.remark) || "查詢中"}</span></td>
+    `;
+    flightRows.append(row);
   }
 
-  calendarGrid.innerHTML = "";
-  for (const cell of dateCells(start, end, items)) {
-    const day = document.createElement("div");
-    day.className = cell.empty ? "day empty" : "day";
-    if (!cell.empty) {
-      const dateNumber = document.createElement("span");
-      dateNumber.className = "date-number";
-      dateNumber.textContent = cell.date.getDate();
-      day.append(dateNumber);
-
-      if (cell.item) {
-        const price = document.createElement("div");
-        price.className = "price";
-        price.textContent = money(cell.item.price, cell.item.currency);
-        const badge = document.createElement("span");
-        badge.className = cell.item.price > 12000 ? "badge high" : "badge";
-        badge.textContent = cell.item.price > 12000 ? "偏高" : "可觀察";
-        day.append(price, badge);
-      } else {
-        const missing = document.createElement("div");
-        missing.className = "missing";
-        missing.textContent = "無資料";
-        day.append(missing);
-      }
-    }
-    calendarGrid.append(day);
+  if (items.length === 0) {
+    const empty = document.createElement("tr");
+    empty.innerHTML = `<td colspan="7" class="empty-row">目前沒有符合條件的航班</td>`;
+    flightRows.append(empty);
   }
 }
 
 async function init() {
-  fromDate.value = isoDate(new Date());
   await loadData();
-  setRouteOptions();
+  setAirportOptions();
   render();
 }
 
-routeSelect.addEventListener("change", render);
-fromDate.addEventListener("change", render);
-rangeSelect.addEventListener("change", render);
+airportSelect.addEventListener("change", render);
+directionSelect.addEventListener("change", render);
+searchInput.addEventListener("input", render);
 
 init().catch((error) => {
   updatedAt.textContent = error.message;

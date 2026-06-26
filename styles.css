@@ -5,9 +5,9 @@
   --muted: #687789;
   --line: #d7e0e8;
   --accent: #0f6f7d;
-  --accent-dark: #0a5360;
   --good: #176b45;
   --warn: #9a4d20;
+  --soft: #eef6f7;
 }
 
 * {
@@ -74,7 +74,7 @@ h2 {
 
 .toolbar,
 .summary,
-.calendar-section {
+.board-section {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -97,7 +97,7 @@ label {
 
 select,
 input {
-  min-width: 190px;
+  min-width: 210px;
   height: 40px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -124,9 +124,10 @@ input {
 
 .summary strong {
   font-size: 20px;
+  overflow-wrap: anywhere;
 }
 
-.calendar-section {
+.board-section {
   padding: 18px;
 }
 
@@ -138,70 +139,68 @@ input {
   margin-bottom: 16px;
 }
 
-.weekday-row,
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
 }
 
-.weekday-row span {
-  padding: 8px;
-  color: var(--muted);
-  font-size: 13px;
-  text-align: right;
-}
-
-.calendar-grid {
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-}
-
-.day {
-  min-height: 112px;
-  padding: 10px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
   background: #fff;
 }
 
-.day.empty {
-  background: #eef2f5;
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  white-space: nowrap;
 }
 
-.date-number {
-  display: block;
+th {
   color: var(--muted);
+  background: #f8fafb;
   font-size: 13px;
-  text-align: right;
+  font-weight: 700;
 }
 
-.price {
-  margin-top: 18px;
-  color: var(--good);
-  font-size: 20px;
-  font-weight: 760;
+td {
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background: var(--soft);
 }
 
 .badge {
   display: inline-flex;
-  margin-top: 8px;
-  padding: 3px 7px;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 9px;
   border-radius: 999px;
   background: #e8f3ef;
   color: var(--good);
   font-size: 12px;
-  font-weight: 650;
+  font-weight: 700;
 }
 
-.badge.high {
+.badge.warn {
   background: #f7eee7;
   color: var(--warn);
 }
 
-.missing {
-  margin-top: 22px;
+.badge.done {
+  background: #edf1f5;
+  color: #546274;
+}
+
+.empty-row {
+  height: 88px;
   color: var(--muted);
-  font-size: 13px;
+  text-align: center;
 }
 
 @media (max-width: 800px) {
@@ -222,15 +221,6 @@ input {
 
   .summary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .day {
-    min-height: 92px;
-    padding: 8px;
-  }
-
-  .price {
-    font-size: 15px;
   }
 }
 

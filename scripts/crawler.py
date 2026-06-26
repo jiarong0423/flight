@@ -4,6 +4,7 @@ import csv
 import hashlib
 import io
 import json
+import os
 import random
 import re
 import time
@@ -11,12 +12,16 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "config" / "sources.json"
 RAW_DIR = ROOT / "data" / "raw"
+
+TDX_TOKEN_URL = "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token"
+TDX_AIR_FIDS_URL = "https://tdx.transportdata.tw/api/basic/v2/Air/FIDS/Airport/{direction}/{airport}"
 
 
 class CrawlError(RuntimeError):
@@ -27,37 +32,14 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
-def date_range(start: date, days: int):
-    for offset in range(days + 1):
-        yield start + timedelta(days=offset)
-
-
 def load_config() -> dict[str, Any]:
     if not CONFIG_PATH.exists():
         raise FileNotFoundError(f"Missing crawler config: {CONFIG_PATH}")
     return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
 
 
-def split_route(route: str) -> tuple[str, str]:
-    if "-" not in route:
-        return route, ""
-    origin, destination = route.split("-", 1)
-    return origin, destination
-
-
-def fill_template(template: str, route: str, travel_date: date) -> str:
-    origin, destination = split_route(route)
-    return template.format(
-        route=route,
-        origin=origin,
-        destination=destination,
-        date=travel_date.isoformat(),
-        yyyymmdd=travel_date.strftime("%Y%m%d"),
-    )
-
-
-def request_text(url: str, timeout_seconds: int, user_agent: str) -> str:
-    request = Request(url, headers={"User-Agent": user_agent, "Accept": "*/*"})
+def request_text(url: str, timeout_seconds: int, headers: dict[str, str] | None = None) -> str:
+    request = Request(url, headers=headers or {})
     try:
         with urlopen(request, timeout=timeout_seconds) as response:
             charset = response.headers.get_content_charset() or "utf-8"
@@ -66,162 +48,225 @@ def request_text(url: str, timeout_seconds: int, user_agent: str) -> str:
         raise CrawlError(f"Fetch failed: {url}: {exc}") from exc
 
 
-def nested_get(payload: Any, path: str) -> Any:
-    current = payload
-    if not path:
-        return current
-    for part in path.split("."):
-        if isinstance(current, list):
-            current = current[int(part)]
-        elif isinstance(current, dict):
-            current = current[part]
-        else:
-            raise KeyError(path)
-    return current
+def request_json(url: str, timeout_seconds: int, headers: dict[str, str] | None = None) -> Any:
+    return json.loads(request_text(url, timeout_seconds, headers))
 
 
-def normalize_price(value: Any) -> int:
-    if isinstance(value, (int, float)):
-        return int(value)
-    digits = re.sub(r"[^0-9]", "", str(value))
-    if not digits:
-        raise ValueError(f"Cannot parse price from {value!r}")
-    return int(digits)
+def request_form_json(url: str, form: dict[str, str], timeout_seconds: int) -> Any:
+    body = urlencode(form).encode("utf-8")
+    request = Request(
+        url,
+        data=body,
+        headers={"Content-Type": "application/x-www-form-urlencoded"},
+        method="POST",
+    )
+    try:
+        with urlopen(request, timeout=timeout_seconds) as response:
+            charset = response.headers.get_content_charset() or "utf-8"
+            return json.loads(response.read().decode(charset, errors="replace"))
+    except (HTTPError, URLError, TimeoutError) as exc:
+        raise CrawlError(f"Token request failed: {exc}") from exc
 
 
-def parse_json_source(text: str, source: dict[str, Any], route: str, travel_date: date, currency: str) -> dict[str, Any]:
-    payload = json.loads(text)
-    items_path = source.get("items_path", "")
-    items = nested_get(payload, items_path)
-    if isinstance(items, dict):
-        items = [items]
-    fields = source.get("fields", {})
-    if not items:
-        raise CrawlError("JSON source returned no items")
-    item = items[0]
-    price_path = fields.get("price", "price")
-    currency_path = fields.get("currency")
-    return {
-        "route": route,
-        "travel_date": travel_date.isoformat(),
-        "price": normalize_price(nested_get(item, price_path)),
-        "currency": nested_get(item, currency_path) if currency_path else currency,
-        "source": source.get("name", "json-source"),
-        "fetched_at": utc_now(),
-    }
+def first_value(record: dict[str, Any], *keys: str, default: Any = None) -> Any:
+    for key in keys:
+        value = record.get(key)
+        if value not in (None, ""):
+            return value
+    return default
 
 
-def parse_csv_source(text: str, source: dict[str, Any], route: str, travel_date: date, currency: str) -> dict[str, Any]:
-    rows = list(csv.DictReader(io.StringIO(text)))
-    fields = source.get("fields", {})
-    price_field = fields.get("price", "price")
-    route_field = fields.get("route", "route")
-    date_field = fields.get("travel_date", "travel_date")
-    for row in rows:
-        row_route = row.get(route_field, route)
-        row_date = row.get(date_field, travel_date.isoformat())
-        if row_route == route and row_date == travel_date.isoformat():
-            return {
-                "route": route,
-                "travel_date": travel_date.isoformat(),
-                "price": normalize_price(row[price_field]),
-                "currency": row.get(fields.get("currency", "currency"), currency),
-                "source": source.get("name", "csv-source"),
-                "fetched_at": utc_now(),
-            }
-    raise CrawlError("CSV source had no matching row")
+def local_name(value: Any) -> str:
+    if isinstance(value, dict):
+        return value.get("Zh_tw") or value.get("En") or value.get("zh_tw") or value.get("en") or ""
+    return str(value or "")
 
 
-def parse_html_regex_source(text: str, source: dict[str, Any], route: str, travel_date: date, currency: str) -> dict[str, Any]:
-    pattern = source.get("price_regex")
-    if not pattern:
-        raise CrawlError("html_regex source requires price_regex")
-    match = re.search(pattern, text, flags=re.IGNORECASE | re.MULTILINE | re.DOTALL)
-    if not match:
-        raise CrawlError("html_regex did not match price")
-    value = match.group("price") if "price" in match.groupdict() else match.group(1)
-    return {
-        "route": route,
-        "travel_date": travel_date.isoformat(),
-        "price": normalize_price(value),
-        "currency": source.get("currency", currency),
-        "source": source.get("name", "html-regex-source"),
-        "fetched_at": utc_now(),
-    }
+def compact_time(value: Any) -> str:
+    text = str(value or "").strip()
+    if len(text) == 4 and text.isdigit():
+        return f"{text[:2]}:{text[2:]}"
+    return text
 
 
-def mock_price(route: str, travel_date: date, currency: str) -> dict[str, Any]:
-    key = f"{route}:{travel_date.isoformat()}".encode("utf-8")
-    digest = hashlib.sha256(key).hexdigest()
-    randomizer = random.Random(int(digest[:12], 16))
-    base = 5200 + randomizer.randint(0, 9000)
-    weekend = 900 if travel_date.weekday() in (4, 5, 6) else 0
-    season = 1400 if travel_date.month in (7, 8, 12) else 0
-    route_adjustment = {
-        "TPE-NRT": 1800,
-        "TPE-ICN": 900,
-        "TPE-BKK": 1200,
-        "TPE-HKG": -300,
-        "TPE-SIN": 1600,
-    }.get(route, 0)
-    return {
-        "route": route,
-        "travel_date": travel_date.isoformat(),
-        "price": base + weekend + season + route_adjustment,
-        "currency": currency,
-        "source": "mock-fallback",
-        "fetched_at": utc_now(),
-    }
-
-
-def fetch_one(route: str, travel_date: date, config: dict[str, Any]) -> dict[str, Any]:
-    currency = config.get("currency", "TWD")
-    timeout_seconds = int(config.get("timeout_seconds", 20))
-    user_agent = config.get("user_agent", "flight-cache-crawler/1.0")
-    last_error = None
-
-    for source in config.get("sources", []):
-        if not source.get("enabled", True):
-            continue
-        source_type = source.get("type")
-        url_template = source.get("url")
-        if not url_template:
-            continue
-        url = fill_template(url_template, route, travel_date)
-        try:
-            text = request_text(url, timeout_seconds, user_agent)
-            save_raw(route, travel_date, source.get("name", source_type or "source"), text)
-            if source_type == "json":
-                return parse_json_source(text, source, route, travel_date, currency)
-            if source_type == "csv":
-                return parse_csv_source(text, source, route, travel_date, currency)
-            if source_type == "html_regex":
-                return parse_html_regex_source(text, source, route, travel_date, currency)
-            raise CrawlError(f"Unsupported source type: {source_type}")
-        except Exception as exc:  # keep next source/fallback alive
-            last_error = exc
-            print(f"WARN {route} {travel_date}: {exc}")
-            time.sleep(float(config.get("request_delay_seconds", 0.2)))
-
-    if config.get("mock_fallback", True):
-        return mock_price(route, travel_date, currency)
-    raise CrawlError(f"All sources failed for {route} {travel_date}: {last_error}")
-
-
-def save_raw(route: str, travel_date: date, source_name: str, text: str) -> None:
+def save_raw(name: str, payload: Any) -> None:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
-    safe_source = re.sub(r"[^a-zA-Z0-9_.-]+", "-", source_name).strip("-") or "source"
-    raw_path = RAW_DIR / f"{travel_date.isoformat()}_{route}_{safe_source}.txt"
-    raw_path.write_text(text, encoding="utf-8")
+    safe_name = re.sub(r"[^a-zA-Z0-9_.-]+", "-", name).strip("-") or "source"
+    raw_path = RAW_DIR / f"{datetime.now().strftime('%Y%m%d-%H%M%S')}_{safe_name}.json"
+    raw_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def crawl_prices(config: dict[str, Any] | None = None) -> list[dict[str, Any]]:
-    config = config or load_config()
-    routes = config.get("routes", [])
-    lookahead_days = int(config.get("lookahead_days", 120))
-    start = date.today()
+class TdxClient:
+    def __init__(self, config: dict[str, Any]):
+        self.timeout_seconds = int(config.get("timeout_seconds", 20))
+        self.user_agent = config.get("user_agent", "flight-cache-crawler/1.0")
+        self.client_id = os.getenv(config.get("client_id_env", "TDX_CLIENT_ID"), "")
+        self.client_secret = os.getenv(config.get("client_secret_env", "TDX_CLIENT_SECRET"), "")
+        self._token: str | None = None
+
+    def token(self) -> str:
+        if self._token:
+            return self._token
+        if not self.client_id or not self.client_secret:
+            raise CrawlError("Missing TDX credentials. Set TDX_CLIENT_ID and TDX_CLIENT_SECRET.")
+        payload = request_form_json(
+            TDX_TOKEN_URL,
+            {
+                "grant_type": "client_credentials",
+                "client_id": self.client_id,
+                "client_secret": self.client_secret,
+            },
+            self.timeout_seconds,
+        )
+        self._token = payload["access_token"]
+        return self._token
+
+    def fids_airport(self, airport: str, direction: str, top: int) -> list[dict[str, Any]]:
+        url = TDX_AIR_FIDS_URL.format(direction=direction, airport=airport)
+        url = f"{url}?{urlencode({'$top': top, '$format': 'JSON'})}"
+        payload = request_json(
+            url,
+            self.timeout_seconds,
+            {
+                "Authorization": f"Bearer {self.token()}",
+                "User-Agent": self.user_agent,
+                "Accept": "application/json",
+            },
+        )
+        if not isinstance(payload, list):
+            raise CrawlError(f"TDX FIDS response is not a list: {airport} {direction}")
+        save_raw(f"tdx-{airport}-{direction}", payload)
+        return payload
+
+
+def normalize_tdx_record(record: dict[str, Any], airport: str, direction: str) -> dict[str, Any]:
+    is_departure = direction == "Departure"
+    flight_date = first_value(record, "FlightDate", "Date", default=date.today().isoformat())
+    flight_number = str(first_value(record, "FlightNumber", "FlightNo", default="")).strip()
+    airline_id = first_value(record, "AirlineID", "AirLineID", "AirlineCode", default="")
+    departure_airport = first_value(record, "DepartureAirportID", "DepartureAirport", default=airport if is_departure else "")
+    arrival_airport = first_value(record, "ArrivalAirportID", "ArrivalAirport", default=airport if not is_departure else "")
+    scheduled = first_value(
+        record,
+        "ScheduleDepartureTime" if is_departure else "ScheduleArrivalTime",
+        "ScheduledDepartureTime" if is_departure else "ScheduledArrivalTime",
+        "ScheduleTime",
+        default="",
+    )
+    estimated = first_value(
+        record,
+        "EstimatedDepartureTime" if is_departure else "EstimatedArrivalTime",
+        "EstimateDepartureTime" if is_departure else "EstimateArrivalTime",
+        "EstimatedTime",
+        default="",
+    )
+    actual = first_value(
+        record,
+        "ActualDepartureTime" if is_departure else "ActualArrivalTime",
+        "ActualTime",
+        default="",
+    )
+    remark = first_value(
+        record,
+        "DepartureRemark" if is_departure else "ArrivalRemark",
+        "Remark",
+        default="",
+    )
+    terminal = first_value(record, "Terminal", "TerminalID", default="")
+    gate = first_value(record, "Gate", "GateID", default="")
+    airline_name = local_name(first_value(record, "AirlineName", "AirLineName", default={}))
+    departure_name = local_name(first_value(record, "DepartureAirportName", default={}))
+    arrival_name = local_name(first_value(record, "ArrivalAirportName", default={}))
+    identity = "|".join([flight_date, flight_number, airport, direction, compact_time(scheduled), compact_time(estimated)])
+    return {
+        "id": hashlib.sha1(identity.encode("utf-8")).hexdigest()[:16],
+        "flight_date": str(flight_date),
+        "direction": "departure" if is_departure else "arrival",
+        "airport": airport,
+        "flight_number": flight_number,
+        "airline_id": airline_id,
+        "airline_name": airline_name,
+        "departure_airport": departure_airport,
+        "departure_airport_name": departure_name,
+        "arrival_airport": arrival_airport,
+        "arrival_airport_name": arrival_name,
+        "scheduled_time": compact_time(scheduled),
+        "estimated_time": compact_time(estimated),
+        "actual_time": compact_time(actual),
+        "terminal": str(terminal or ""),
+        "gate": str(gate or ""),
+        "remark": str(remark or ""),
+        "source": "TDX Air FIDS",
+        "fetched_at": utc_now(),
+    }
+
+
+def mock_tdx_records(config: dict[str, Any]) -> list[dict[str, Any]]:
+    airports = config.get("airports", ["TPE", "TSA", "KHH"])
+    directions = config.get("directions", ["Departure", "Arrival"])
+    airlines = ["CI", "BR", "JX", "IT", "AE", "B7"]
+    destinations = ["NRT", "ICN", "HKG", "BKK", "SIN", "KHH", "TSA", "MZG", "KNH"]
+    today = date.today().isoformat()
     items = []
-    for route in routes:
-        for travel_date in date_range(start, lookahead_days):
-            items.append(fetch_one(route, travel_date, config))
+    for airport in airports:
+        for direction in directions:
+            for index in range(12):
+                rng = random.Random(f"{airport}:{direction}:{today}:{index}")
+                airline = rng.choice(airlines)
+                hour = 6 + index
+                minute = rng.choice([0, 5, 10, 20, 30, 45, 55])
+                scheduled = f"{hour:02d}:{minute:02d}"
+                estimated_minute = (minute + rng.choice([0, 0, 5, 10, 20])) % 60
+                estimated = f"{hour:02d}:{estimated_minute:02d}"
+                other_airport = rng.choice([item for item in destinations if item != airport])
+                record = {
+                    "FlightDate": today,
+                    "FlightNumber": f"{airline}{rng.randint(100, 999)}",
+                    "AirlineID": airline,
+                    "DepartureAirportID": airport if direction == "Departure" else other_airport,
+                    "ArrivalAirportID": other_airport if direction == "Departure" else airport,
+                    "ScheduleDepartureTime" if direction == "Departure" else "ScheduleArrivalTime": scheduled,
+                    "EstimatedDepartureTime" if direction == "Departure" else "EstimatedArrivalTime": estimated,
+                    "DepartureRemark" if direction == "Departure" else "ArrivalRemark": rng.choice(["準時", "報到", "已飛", "延誤", "抵達"]),
+                    "Terminal": str(rng.randint(1, 2)),
+                    "Gate": f"{rng.choice(['A', 'B', 'C', 'D'])}{rng.randint(1, 9)}",
+                }
+                item = normalize_tdx_record(record, airport, direction)
+                item["source"] = "mock-tdx-fallback"
+                items.append(item)
     return items
+
+
+def crawl_tdx_fids(config: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+    config = config or load_config()
+    airports = config.get("airports", [])
+    directions = config.get("directions", ["Departure", "Arrival"])
+    top = int(config.get("top", 200))
+    delay = float(config.get("request_delay_seconds", 0.2))
+    client = TdxClient(config)
+    items: list[dict[str, Any]] = []
+
+    try:
+        for airport in airports:
+            for direction in directions:
+                payload = client.fids_airport(airport, direction, top)
+                items.extend(normalize_tdx_record(row, airport, direction) for row in payload)
+                time.sleep(delay)
+    except Exception as exc:
+        if config.get("mock_fallback", True):
+            print(f"WARN using mock fallback: {exc}")
+            return mock_tdx_records(config)
+        raise
+
+    return items
+
+
+def write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> None:
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def parse_csv_source(text: str) -> list[dict[str, str]]:
+    return list(csv.DictReader(io.StringIO(text)))

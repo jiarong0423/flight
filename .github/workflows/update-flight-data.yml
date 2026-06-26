@@ -21,6 +21,9 @@ jobs:
           python-version: "3.12"
 
       - name: Generate static data
+        env:
+          TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
+          TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
         run: python scripts/update_data.py
 
       - name: Commit data changes

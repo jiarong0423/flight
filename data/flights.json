@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T09:37:00+00:00",
+  "generated_at": "2026-06-26T09:37:20+00:00",
   "source": "mock-tdx-fallback",
   "dataset": "TDX Air FIDS Airport Departure/Arrival",
   "airports": [
@@ -33,7 +33,7 @@
       "gate": "D7",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "215521494491215c",
@@ -54,7 +54,7 @@
       "gate": "C5",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "95b4ab40bbcef066",
@@ -75,7 +75,7 @@
       "gate": "D3",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "183a17bdc1c15a47",
@@ -96,7 +96,7 @@
       "gate": "D4",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "a837f79e8efb743a",
@@ -117,7 +117,7 @@
       "gate": "D4",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "7eea840097e37582",
@@ -138,7 +138,7 @@
       "gate": "B3",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "2d8b5e6b03b41539",
@@ -159,7 +159,7 @@
       "gate": "D5",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "465540e1e13e545d",
@@ -180,7 +180,7 @@
       "gate": "D3",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "6d78155ede8501d7",
@@ -201,7 +201,7 @@
       "gate": "A6",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "3be709478b0e3b4f",
@@ -222,7 +222,7 @@
       "gate": "A1",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "d81fc81923d750e7",
@@ -243,7 +243,7 @@
       "gate": "D5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "b89bd5286824228a",
@@ -264,7 +264,7 @@
       "gate": "D9",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "3d9cd1dff6eaa015",
@@ -285,7 +285,7 @@
       "gate": "D7",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "a77caf7a58e0eabc",
@@ -306,7 +306,7 @@
       "gate": "B3",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "75b38716dca5440c",
@@ -327,7 +327,7 @@
       "gate": "C8",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e76c5d6338312187",
@@ -348,7 +348,7 @@
       "gate": "C3",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "9fd1c7525ad3f4f9",
@@ -369,7 +369,7 @@
       "gate": "D2",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "13a1639e8b87a4a6",
@@ -390,7 +390,7 @@
       "gate": "D6",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "59331ba4eb0ed41e",
@@ -411,7 +411,7 @@
       "gate": "B3",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "5c3bdaf1f429d37a",
@@ -432,7 +432,7 @@
       "gate": "B7",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "ca3237e490489d20",
@@ -453,7 +453,7 @@
       "gate": "B6",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "a859e88baad94bd1",
@@ -474,7 +474,7 @@
       "gate": "D7",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "1908ce2f6df01ac3",
@@ -495,7 +495,7 @@
       "gate": "D6",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e2d73e1a8b92c376",
@@ -516,7 +516,7 @@
       "gate": "B2",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "83e385f4dddec31a",
@@ -537,7 +537,7 @@
       "gate": "C5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "77b723efa4301a5f",
@@ -558,7 +558,7 @@
       "gate": "C2",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "897cb743d873ac7b",
@@ -579,7 +579,7 @@
       "gate": "A4",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "9943eef7ef1b1d6d",
@@ -600,7 +600,7 @@
       "gate": "B1",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "08a9164f673db1e0",
@@ -621,7 +621,7 @@
       "gate": "D7",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e95a96169e6fa37d",
@@ -642,7 +642,7 @@
       "gate": "C4",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "d2cb15ab0bc08d68",
@@ -663,7 +663,7 @@
       "gate": "D4",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "554e49c44feeced4",
@@ -684,7 +684,7 @@
       "gate": "B8",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "d79110da3a13ec5b",
@@ -705,7 +705,7 @@
       "gate": "D6",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "1a2e96f0e88026a7",
@@ -726,7 +726,7 @@
       "gate": "A9",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "48f418b896179aa7",
@@ -747,7 +747,7 @@
       "gate": "B9",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "ccdd94774c42d856",
@@ -768,7 +768,7 @@
       "gate": "A5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "f2c6c7197b99e486",
@@ -789,7 +789,7 @@
       "gate": "A5",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "28b9d9df5c01a685",
@@ -810,7 +810,7 @@
       "gate": "A5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "db897984a80b5a1c",
@@ -831,7 +831,7 @@
       "gate": "C7",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "a2955cd826bd6dd8",
@@ -852,7 +852,7 @@
       "gate": "D3",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e103670122c48d28",
@@ -873,7 +873,7 @@
       "gate": "C6",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "23bfaf456eb94788",
@@ -894,7 +894,7 @@
       "gate": "C3",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "c2e9e0f7bd12d7e1",
@@ -915,7 +915,7 @@
       "gate": "B1",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "98b1a64ecceba927",
@@ -936,7 +936,7 @@
       "gate": "B7",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "f125fa7f4acb07d3",
@@ -957,7 +957,7 @@
       "gate": "C9",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "1619174565f1675b",
@@ -978,7 +978,7 @@
       "gate": "D5",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "ff1988cc4854b2dc",
@@ -999,7 +999,7 @@
       "gate": "A7",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e8d3f87a59a8e88b",
@@ -1020,7 +1020,7 @@
       "gate": "B2",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "6016bd648dfbef2d",
@@ -1041,7 +1041,7 @@
       "gate": "D8",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "7b900a0876ec25f9",
@@ -1062,7 +1062,7 @@
       "gate": "C2",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "a3fe7432ed46ade2",
@@ -1083,7 +1083,7 @@
       "gate": "B3",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "0bd37b8d8cfefb6e",
@@ -1104,7 +1104,7 @@
       "gate": "A1",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "0e8596b6a057ee00",
@@ -1125,7 +1125,7 @@
       "gate": "C6",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "898659f3d0d47860",
@@ -1146,7 +1146,7 @@
       "gate": "C4",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "ee7b2b9246c20417",
@@ -1167,7 +1167,7 @@
       "gate": "C2",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "5b42b53c25b97fca",
@@ -1188,7 +1188,7 @@
       "gate": "B2",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "bdbfee8dc241a1b2",
@@ -1209,7 +1209,7 @@
       "gate": "D1",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "637b395fd9ef7a0e",
@@ -1230,7 +1230,7 @@
       "gate": "D6",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "a63ec5e2c79ced04",
@@ -1251,7 +1251,7 @@
       "gate": "A5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "d7af4c935d9dff61",
@@ -1272,7 +1272,7 @@
       "gate": "D2",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e2ba91cb3402fba2",
@@ -1293,7 +1293,7 @@
       "gate": "C6",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "99ea0ed0449060fb",
@@ -1314,7 +1314,7 @@
       "gate": "B1",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "ed1eaa314a0a6cce",
@@ -1335,7 +1335,7 @@
       "gate": "D4",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "0c9a30256f52b6ec",
@@ -1356,7 +1356,7 @@
       "gate": "B4",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "8f7d6af9e497bf85",
@@ -1377,7 +1377,7 @@
       "gate": "A8",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "5c708b02c82d8328",
@@ -1398,7 +1398,7 @@
       "gate": "C9",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "22ed8f8cdee0b448",
@@ -1419,7 +1419,7 @@
       "gate": "C7",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "2d1ca17f3581116a",
@@ -1440,7 +1440,7 @@
       "gate": "D7",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "aa721a4e4421b44d",
@@ -1461,7 +1461,7 @@
       "gate": "A9",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "9c8b73af2570e18f",
@@ -1482,7 +1482,7 @@
       "gate": "C6",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "384ff06ebd032be5",
@@ -1503,7 +1503,7 @@
       "gate": "B8",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "24de6940662d352a",
@@ -1524,7 +1524,7 @@
       "gate": "B8",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "8253586122d78e6f",
@@ -1545,7 +1545,7 @@
       "gate": "D2",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "f70c194a8b6fe4e0",
@@ -1566,7 +1566,7 @@
       "gate": "B5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "8f7984444b75208e",
@@ -1587,7 +1587,7 @@
       "gate": "A2",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "cd96e829336bfca2",
@@ -1608,7 +1608,7 @@
       "gate": "D3",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "15057c485b1b73a3",
@@ -1629,7 +1629,7 @@
       "gate": "B1",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "9dfacf0b1b13e622",
@@ -1650,7 +1650,7 @@
       "gate": "B6",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "8ef94cdbf1f352f1",
@@ -1671,7 +1671,7 @@
       "gate": "A1",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "f7df6bd39bb93687",
@@ -1692,7 +1692,7 @@
       "gate": "B5",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "ada1081bae5ccd18",
@@ -1713,7 +1713,7 @@
       "gate": "B1",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "a98f4bc9a17510cd",
@@ -1734,7 +1734,7 @@
       "gate": "D7",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "6ed9f5d33b71e44d",
@@ -1755,7 +1755,7 @@
       "gate": "C9",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "7d484aece3a14d5d",
@@ -1776,7 +1776,7 @@
       "gate": "C1",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "5cdc5c0e98dcdebe",
@@ -1797,7 +1797,7 @@
       "gate": "D8",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "bc5992113cf518b2",
@@ -1818,7 +1818,7 @@
       "gate": "D9",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "dcd5c38cf3a69254",
@@ -1839,7 +1839,7 @@
       "gate": "C1",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e8ec3280878e2e2a",
@@ -1860,7 +1860,7 @@
       "gate": "D5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "13ec998a7f49396f",
@@ -1881,7 +1881,7 @@
       "gate": "D4",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "6334069462148d4c",
@@ -1902,7 +1902,7 @@
       "gate": "C2",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "4b1d093442852860",
@@ -1923,7 +1923,7 @@
       "gate": "C8",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "1742f755f1bea067",
@@ -1944,7 +1944,7 @@
       "gate": "D4",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "d87fcf7aba9e8ec2",
@@ -1965,7 +1965,7 @@
       "gate": "A9",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "8df6941650a71673",
@@ -1986,7 +1986,7 @@
       "gate": "C3",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e2dcc02849b4632f",
@@ -2007,7 +2007,7 @@
       "gate": "D5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "1d92a732b1c3e889",
@@ -2028,7 +2028,7 @@
       "gate": "A2",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "b479716249909d0c",
@@ -2049,7 +2049,7 @@
       "gate": "C8",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "f3f41bb29a8bbb62",
@@ -2070,7 +2070,7 @@
       "gate": "D7",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "f3bd43c85e6d58a6",
@@ -2091,7 +2091,7 @@
       "gate": "B6",
       "remark": "報到",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "531d0755775caaa5",
@@ -2112,7 +2112,7 @@
       "gate": "B4",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "588e214a4c7ac4d8",
@@ -2133,7 +2133,7 @@
       "gate": "D3",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "9de6f61f00b98e3a",
@@ -2154,7 +2154,7 @@
       "gate": "B8",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "52da2056f9d8521a",
@@ -2175,7 +2175,7 @@
       "gate": "A3",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "2de587ce161534e0",
@@ -2196,7 +2196,7 @@
       "gate": "A6",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "09304d0ced2792d1",
@@ -2217,7 +2217,7 @@
       "gate": "B2",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "58f43e56da97de41",
@@ -2238,7 +2238,7 @@
       "gate": "D6",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "f63179035f65d3af",
@@ -2259,7 +2259,7 @@
       "gate": "C7",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "25bafac9fa4a281c",
@@ -2280,7 +2280,7 @@
       "gate": "D8",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "a7ff39d725fac992",
@@ -2301,7 +2301,7 @@
       "gate": "C2",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "2d66865fe00156cd",
@@ -2322,7 +2322,7 @@
       "gate": "B5",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "917f35b6225b10af",
@@ -2343,7 +2343,7 @@
       "gate": "D8",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "3f1ddb03f45a201c",
@@ -2364,7 +2364,7 @@
       "gate": "C8",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "55e043cfb4ac4c76",
@@ -2385,7 +2385,7 @@
       "gate": "A2",
       "remark": "延誤",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "175a6640e8c7e08d",
@@ -2406,7 +2406,7 @@
       "gate": "D4",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "881237c79d2b91a9",
@@ -2427,7 +2427,7 @@
       "gate": "B4",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e16dbfac87129505",
@@ -2448,7 +2448,7 @@
       "gate": "B9",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "e3f0423d10854d6a",
@@ -2469,7 +2469,7 @@
       "gate": "C8",
       "remark": "抵達",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "f4b4fdf27605957e",
@@ -2490,7 +2490,7 @@
       "gate": "A7",
       "remark": "已飛",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "3f562d40ce88866f",
@@ -2511,7 +2511,7 @@
       "gate": "D5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     },
     {
       "id": "01ed8881b368d4a5",
@@ -2532,7 +2532,7 @@
       "gate": "D5",
       "remark": "準時",
       "source": "mock-tdx-fallback",
-      "fetched_at": "2026-06-26T09:37:00+00:00"
+      "fetched_at": "2026-06-26T09:37:20+00:00"
     }
   ]
 }
