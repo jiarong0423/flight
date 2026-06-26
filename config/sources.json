@@ -32,6 +32,17 @@
   "offer_mock_fallback": true,
   "ticket_offer_sources": [
     {
+      "name": "amadeus-flight-offers",
+      "type": "amadeus",
+      "enabled": false,
+      "environment": "test",
+      "client_id_env": "AMADEUS_CLIENT_ID",
+      "client_secret_env": "AMADEUS_CLIENT_SECRET",
+      "currency": "TWD",
+      "adults": 1,
+      "max_results": 10
+    },
+    {
       "name": "example-json-ticket-provider",
       "type": "json",
       "enabled": false,

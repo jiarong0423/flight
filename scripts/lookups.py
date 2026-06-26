@@ -21,6 +21,19 @@ def airport_name(code: Any, lookups: dict[str, Any] | None = None, locale: str =
     return airport.get(locale) or airport.get("en") or ""
 
 
+def airport_info(code: Any, lookups: dict[str, Any] | None = None) -> dict[str, Any]:
+    lookups = lookups or load_lookups()
+    code = str(code or "").strip().upper()
+    airport = lookups.get("airports", {}).get(code, {})
+    return {
+        "airport_id": code,
+        "airport_name_zh": airport.get("zh_tw", ""),
+        "airport_name_en": airport.get("en", ""),
+        "country": airport.get("country", ""),
+        "flag": airport.get("flag", ""),
+    }
+
+
 def standard_direction(value: Any, lookups: dict[str, Any] | None = None) -> str:
     lookups = lookups or load_lookups()
     text = str(value or "").strip()

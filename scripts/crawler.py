@@ -17,7 +17,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from airline_rules import merged_rule
-from lookups import airport_name, mapped_baggage, standard_direction, standard_status
+from lookups import airport_info, airport_name, mapped_baggage, standard_direction, standard_status
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +26,8 @@ RAW_DIR = ROOT / "data" / "raw"
 
 TDX_TOKEN_URL = "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token"
 TDX_AIR_FIDS_URL = "https://tdx.transportdata.tw/api/basic/v2/Air/FIDS/Airport/{direction}/{airport}"
+AMADEUS_TEST_BASE_URL = "https://test.api.amadeus.com"
+AMADEUS_PROD_BASE_URL = "https://api.amadeus.com"
 
 
 class CrawlError(RuntimeError):
@@ -79,6 +81,22 @@ def request_form_json(url: str, form: dict[str, str], timeout_seconds: int) -> A
             return json.loads(response.read().decode(charset, errors="replace"))
     except (HTTPError, URLError, TimeoutError) as exc:
         raise CrawlError(f"Token request failed: {exc}") from exc
+
+
+def request_form_json_headers(url: str, form: dict[str, str], timeout_seconds: int, headers: dict[str, str] | None = None) -> Any:
+    body = urlencode(form).encode("utf-8")
+    request_headers = {"Content-Type": "application/x-www-form-urlencoded"}
+    request_headers.update(headers or {})
+    request = Request(url, data=body, headers=request_headers, method="POST")
+    try:
+        with urlopen(request, timeout=timeout_seconds, context=tls_context()) as response:
+            charset = response.headers.get_content_charset() or "utf-8"
+            return json.loads(response.read().decode(charset, errors="replace"))
+    except HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")[:500]
+        raise CrawlError(f"Form request failed: {url}: HTTP {exc.code}: {detail}") from exc
+    except (URLError, TimeoutError) as exc:
+        raise CrawlError(f"Form request failed: {url}: {exc}") from exc
 
 
 def first_value(record: dict[str, Any], *keys: str, default: Any = None) -> Any:
@@ -212,6 +230,137 @@ class TdxClient:
         return payload
 
 
+class AmadeusClient:
+    def __init__(self, config: dict[str, Any], source: dict[str, Any]):
+        self.timeout_seconds = int(config.get("timeout_seconds", 20))
+        self.client_id = os.getenv(source.get("client_id_env", "AMADEUS_CLIENT_ID"), "")
+        self.client_secret = os.getenv(source.get("client_secret_env", "AMADEUS_CLIENT_SECRET"), "")
+        self.base_url = AMADEUS_PROD_BASE_URL if source.get("environment") == "production" else AMADEUS_TEST_BASE_URL
+        self.currency = source.get("currency", "TWD")
+        self.adults = int(source.get("adults", 1))
+        self.max_results = int(source.get("max_results", 10))
+        self._token: str | None = None
+
+    def token(self) -> str:
+        if self._token:
+            return self._token
+        if not self.client_id or not self.client_secret:
+            raise CrawlError("Missing Amadeus credentials. Set AMADEUS_CLIENT_ID and AMADEUS_CLIENT_SECRET.")
+        payload = request_form_json_headers(
+            f"{self.base_url}/v1/security/oauth2/token",
+            {
+                "grant_type": "client_credentials",
+                "client_id": self.client_id,
+                "client_secret": self.client_secret,
+            },
+            self.timeout_seconds,
+        )
+        self._token = payload["access_token"]
+        return self._token
+
+    def flight_offers(self, route: str, departure_date: date) -> dict[str, Any]:
+        origin, destination = split_route(route)
+        query = {
+            "originLocationCode": origin,
+            "destinationLocationCode": destination,
+            "departureDate": departure_date.isoformat(),
+            "adults": self.adults,
+            "currencyCode": self.currency,
+            "max": self.max_results,
+        }
+        url = f"{self.base_url}/v2/shopping/flight-offers?{urlencode(query)}"
+        payload = request_json(
+            url,
+            self.timeout_seconds,
+            {
+                "Authorization": f"Bearer {self.token()}",
+                "Accept": "application/json",
+            },
+        )
+        save_raw(f"amadeus-{route}-{departure_date.isoformat()}", payload)
+        return payload
+
+
+def iso_time(value: Any) -> str:
+    text = str(value or "")
+    if "T" in text:
+        return text.split("T", 1)[1][:5]
+    return compact_time(text)
+
+
+def parse_duration_minutes(value: Any) -> int | str:
+    text = str(value or "")
+    match = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?", text)
+    if not match:
+        return ""
+    hours = int(match.group(1) or 0)
+    minutes = int(match.group(2) or 0)
+    return hours * 60 + minutes
+
+
+def amadeus_baggage(offer: dict[str, Any]) -> dict[str, Any]:
+    checked_weight = ""
+    checked_pieces = ""
+    fare_details = (
+        offer.get("travelerPricings", [{}])[0]
+        .get("fareDetailsBySegment", [])
+    )
+    for detail in fare_details:
+        bags = detail.get("includedCheckedBags") or {}
+        if not checked_weight and bags.get("weight"):
+            checked_weight = bags.get("weight")
+        if not checked_pieces and bags.get("quantity") is not None:
+            checked_pieces = bags.get("quantity")
+    return {
+        "baggage_checked_weight_kg": checked_weight,
+        "baggage_checked_pieces": checked_pieces,
+        "baggage_carry_on_weight_kg": "",
+        "baggage_text": "Amadeus includedCheckedBags",
+    }
+
+
+def parse_amadeus_offers(payload: dict[str, Any], route: str, departure_date: date) -> list[dict[str, Any]]:
+    parsed = []
+    for offer in payload.get("data", []):
+        itinerary = (offer.get("itineraries") or [{}])[0]
+        segments = itinerary.get("segments") or []
+        if not segments:
+            continue
+        first_segment = segments[0]
+        last_segment = segments[-1]
+        airline_id = (offer.get("validatingAirlineCodes") or [first_segment.get("carrierCode", "")])[0]
+        flight_numbers = [
+            f"{segment.get('carrierCode', '')}{segment.get('number', '')}".strip()
+            for segment in segments
+        ]
+        transfer_airports = [
+            segment.get("arrival", {}).get("iataCode", "")
+            for segment in segments[:-1]
+            if segment.get("arrival", {}).get("iataCode")
+        ]
+        transfer_airports_zh = " / ".join(airport_name(code) for code in transfer_airports)
+        transfer_count = max(len(segments) - 1, 0)
+        baggage = amadeus_baggage(offer)
+        row = {
+            "price": offer.get("price", {}).get("grandTotal") or offer.get("price", {}).get("total", ""),
+            "currency": offer.get("price", {}).get("currency", "TWD"),
+            "flight_number": " + ".join(flight_numbers),
+            "airline_id": airline_id,
+            "departure_time": iso_time(first_segment.get("departure", {}).get("at")),
+            "arrival_time": iso_time(last_segment.get("arrival", {}).get("at")),
+            "duration_minutes": parse_duration_minutes(itinerary.get("duration")),
+            "transfer_count": transfer_count,
+            "transfer_airports": ",".join(transfer_airports),
+            "transfer_airports_zh": transfer_airports_zh,
+            "transfer_summary": "直飛" if transfer_count == 0 else f"{transfer_count} stop(s): {transfer_airports_zh or ','.join(transfer_airports)}",
+            "fare_brand": offer.get("pricingOptions", {}).get("fareType", [""])[0],
+            "booking_url": "",
+            **baggage,
+        }
+        parsed.append(normalize_offer(row, route, departure_date, "amadeus-flight-offers", {}))
+    return parsed
+
+
 def normalize_tdx_record(record: dict[str, Any], airport: str, direction: str) -> dict[str, Any]:
     is_departure = direction == "Departure"
     flight_date = first_value(record, "FlightDate", "Date", default=date.today().isoformat())
@@ -254,6 +403,8 @@ def normalize_tdx_record(record: dict[str, Any], airport: str, direction: str) -
     arrival_name = local_name(first_value(record, "ArrivalAirportName", default={}))
     departure_name = departure_name or airport_name(departure_airport)
     arrival_name = arrival_name or airport_name(arrival_airport)
+    departure_info = airport_info(departure_airport)
+    arrival_info = airport_info(arrival_airport)
     identity = "|".join([flight_date, flight_number, airport, direction, compact_time(scheduled), compact_time(estimated)])
     return {
         "id": hashlib.sha1(identity.encode("utf-8")).hexdigest()[:16],
@@ -269,9 +420,13 @@ def normalize_tdx_record(record: dict[str, Any], airport: str, direction: str) -
         "departure_airport": departure_airport,
         "departure_airport_name": departure_name,
         "departure_airport_name_zh": airport_name(departure_airport),
+        "departure_country": departure_info.get("country", ""),
+        "departure_flag": departure_info.get("flag", ""),
         "arrival_airport": arrival_airport,
         "arrival_airport_name": arrival_name,
         "arrival_airport_name_zh": airport_name(arrival_airport),
+        "arrival_country": arrival_info.get("country", ""),
+        "arrival_flag": arrival_info.get("flag", ""),
         "scheduled_time": compact_time(scheduled),
         "estimated_time": compact_time(estimated),
         "actual_time": compact_time(actual),
@@ -364,6 +519,8 @@ def mock_static_schedule(config: dict[str, Any]) -> list[dict[str, Any]]:
                 rng = random.Random(f"schedule:{route}:{weekday}:{slot}:{route_seed}")
                 airline = airlines[(route_seed + weekday + slot) % len(airlines)]
                 airline_rule = merged_rule(airline)
+                origin_info = airport_info(origin)
+                destination_info = airport_info(destination)
                 flight_number = f"{airline}{100 + ((route_seed + weekday * 13 + slot * 71) % 800)}"
                 dep_hour = 7 + slot * 8 + rng.randint(0, 2)
                 dep_minute = rng.choice([0, 10, 20, 30, 45, 55])
@@ -378,9 +535,13 @@ def mock_static_schedule(config: dict[str, Any]) -> list[dict[str, Any]]:
                         "origin": origin,
                         "origin_name": airport_name(origin),
                         "origin_name_zh": airport_name(origin),
+                        "origin_country": origin_info.get("country", ""),
+                        "origin_flag": origin_info.get("flag", ""),
                         "destination": destination,
                         "destination_name": airport_name(destination),
                         "destination_name_zh": airport_name(destination),
+                        "destination_country": destination_info.get("country", ""),
+                        "destination_flag": destination_info.get("flag", ""),
                         "flight_date": travel_day.isoformat(),
                         "weekday": weekday,
                         "airline_id": airline,
@@ -450,6 +611,16 @@ def build_change_overlays(schedule: list[dict[str, Any]], offers: list[dict[str,
                 "change_id": change_id,
                 "change_type": change_type,
                 "route": offer.get("route", ""),
+                "origin": offer.get("origin", ""),
+                "origin_name": offer.get("origin_name", ""),
+                "origin_name_zh": offer.get("origin_name_zh", ""),
+                "origin_country": offer.get("origin_country", ""),
+                "origin_flag": offer.get("origin_flag", ""),
+                "destination": offer.get("destination", ""),
+                "destination_name": offer.get("destination_name", ""),
+                "destination_name_zh": offer.get("destination_name_zh", ""),
+                "destination_country": offer.get("destination_country", ""),
+                "destination_flag": offer.get("destination_flag", ""),
                 "flight_date": offer.get("departure_date", ""),
                 "flight_number": offer.get("flight_number", ""),
                 "airline_id": offer.get("airline_id", ""),
@@ -462,6 +633,9 @@ def build_change_overlays(schedule: list[dict[str, Any]], offers: list[dict[str,
                 "baggage_checked_pieces": offer.get("baggage_checked_pieces", ""),
                 "baggage_carry_on_weight_kg": offer.get("baggage_carry_on_weight_kg", ""),
                 "transfer_count": offer.get("transfer_count", ""),
+                "transfer_airports": offer.get("transfer_airports", ""),
+                "transfer_airports_zh": offer.get("transfer_airports_zh", ""),
+                "transfer_summary": offer.get("transfer_summary", ""),
                 "booking_url": offer.get("booking_url", ""),
                 "changed_fields": ",".join(sorted(change_fields.keys())),
                 "source": offer.get("source", ""),
@@ -479,6 +653,8 @@ def normalize_offer(
     fields: dict[str, str],
 ) -> dict[str, Any]:
     origin, destination = split_route(route)
+    origin_info = airport_info(origin)
+    destination_info = airport_info(destination)
     price = normalize_int(nested_get(record, fields.get("price", "price")), 0) or 0
     flight_number = str(nested_get(record, fields.get("flight_number", "flight_number"), "")).strip()
     airline_id = str(nested_get(record, fields.get("airline_id", "airline_id"), "")).strip()
@@ -486,6 +662,11 @@ def normalize_offer(
     departure_time = compact_time(nested_get(record, fields.get("departure_time", "departure_time"), ""))
     arrival_time = compact_time(nested_get(record, fields.get("arrival_time", "arrival_time"), ""))
     transfer_count = normalize_int(nested_get(record, fields.get("transfer_count", "transfer_count"), 0), 0) or 0
+    transfer_airports = str(nested_get(record, fields.get("transfer_airports", "transfer_airports"), "")).strip()
+    transfer_airports_zh = " / ".join(
+        airport_name(code.strip()) for code in transfer_airports.split(",") if code.strip()
+    )
+    transfer_summary = "直飛" if transfer_count == 0 else f"{transfer_count} stop(s) {transfer_airports_zh or transfer_airports}".strip()
     checked_kg = normalize_int(nested_get(record, fields.get("baggage_checked_weight_kg", "baggage_checked_weight_kg"), ""), None)
     checked_pieces = normalize_int(nested_get(record, fields.get("baggage_checked_pieces", "baggage_checked_pieces"), ""), None)
     carry_on_kg = normalize_int(nested_get(record, fields.get("baggage_carry_on_weight_kg", "baggage_carry_on_weight_kg"), ""), None)
@@ -513,9 +694,13 @@ def normalize_offer(
         "origin": origin,
         "origin_name": airport_name(origin),
         "origin_name_zh": airport_name(origin),
+        "origin_country": origin_info.get("country", ""),
+        "origin_flag": origin_info.get("flag", ""),
         "destination": destination,
         "destination_name": airport_name(destination),
         "destination_name_zh": airport_name(destination),
+        "destination_country": destination_info.get("country", ""),
+        "destination_flag": destination_info.get("flag", ""),
         "departure_date": departure_date.isoformat(),
         "price": price,
         "currency": str(nested_get(record, fields.get("currency", "currency"), "TWD") or "TWD"),
@@ -528,6 +713,9 @@ def normalize_offer(
         "arrival_time": arrival_time,
         "duration_minutes": normalize_int(nested_get(record, fields.get("duration_minutes", "duration_minutes"), ""), None),
         "transfer_count": transfer_count,
+        "transfer_airports": transfer_airports,
+        "transfer_airports_zh": transfer_airports_zh,
+        "transfer_summary": transfer_summary,
         "baggage_checked_weight_kg": checked_kg if checked_kg is not None else "",
         "baggage_checked_pieces": checked_pieces if checked_pieces is not None else "",
         "baggage_carry_on_weight_kg": carry_on_kg if carry_on_kg is not None else "",
@@ -590,12 +778,16 @@ def mock_ticket_offers(config: dict[str, Any]) -> list[dict[str, Any]]:
     today = date.today()
     offers = []
     for route in routes:
+        origin, destination = split_route(route)
+        possible_transfers = [code for code in ["HKG", "ICN", "NRT", "KIX", "SIN", "BKK"] if code not in (origin, destination)]
         for travel_day in date_range(today, lookahead_days):
             for rank in range(2):
                 rng = random.Random(f"{route}:{travel_day.isoformat()}:{rank}")
                 airline = rng.choice(airlines)
                 checked_kg = rng.choice([0, 15, 20, 23, 30])
                 checked_pieces = 0 if checked_kg == 0 else rng.choice([1, 2])
+                transfer_count = rng.choice([0, 0, 1, 1, 2])
+                transfer_airports = rng.sample(possible_transfers, k=min(transfer_count, len(possible_transfers)))
                 row = {
                     "price": 4200 + rng.randint(0, 12000),
                     "currency": "TWD",
@@ -604,7 +796,8 @@ def mock_ticket_offers(config: dict[str, Any]) -> list[dict[str, Any]]:
                     "departure_time": f"{rng.randint(6, 22):02d}:{rng.choice([0, 10, 20, 30, 45, 55]):02d}",
                     "arrival_time": f"{rng.randint(8, 23):02d}:{rng.choice([0, 10, 20, 30, 45, 55]):02d}",
                     "duration_minutes": rng.randint(85, 420),
-                    "transfer_count": rng.choice([0, 0, 1, 1, 2]),
+                    "transfer_count": transfer_count,
+                    "transfer_airports": ",".join(transfer_airports),
                     "baggage_checked_weight_kg": checked_kg,
                     "baggage_checked_pieces": checked_pieces,
                     "baggage_carry_on_weight_kg": rng.choice([7, 10]),
@@ -632,6 +825,17 @@ def crawl_ticket_offers(config: dict[str, Any] | None = None) -> list[dict[str, 
 
     for source in config.get("ticket_offer_sources", []):
         if not source.get("enabled", False):
+            continue
+        if source.get("type") == "amadeus":
+            client = AmadeusClient(config, source)
+            for route in routes:
+                for travel_day in date_range(today, lookahead_days):
+                    try:
+                        payload = client.flight_offers(route, travel_day)
+                        offers.extend(parse_amadeus_offers(payload, route, travel_day))
+                        time.sleep(delay)
+                    except Exception as exc:
+                        print(f"WARN skipped Amadeus offer {route} {travel_day}: {exc}")
             continue
         for route in routes:
             for travel_day in date_range(today, lookahead_days):

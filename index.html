@@ -10,22 +10,33 @@
     <main class="app-shell">
       <header class="calendar-header">
         <div>
-          <p class="eyebrow">Fixed schedule + change overlay</p>
-          <h1>航班價格月曆</h1>
+          <p class="eyebrow" data-i18n="eyebrow">Fixed schedule + change overlay</p>
+          <h1 data-i18n="appTitle">航班價格月曆</h1>
         </div>
-        <div class="sync-status">
-          <span>最後更新</span>
-          <strong id="updatedAt">讀取中</strong>
+        <div class="header-actions">
+          <label class="language-picker">
+            <span data-i18n="language">語言</span>
+            <select id="languageSelect" aria-label="Language">
+              <option value="zh">中</option>
+              <option value="en">EN</option>
+              <option value="ja">日</option>
+              <option value="ko">韓</option>
+            </select>
+          </label>
+          <div class="sync-status">
+            <span data-i18n="updatedAt">最後更新</span>
+            <strong id="updatedAt">讀取中</strong>
+          </div>
         </div>
       </header>
 
       <section class="toolbar">
         <label>
-          航線
+          <span data-i18n="route">航線</span>
           <select id="routeSelect"></select>
         </label>
         <label>
-          月份
+          <span data-i18n="month">月份</span>
           <input id="monthInput" type="month" />
         </label>
       </section>
@@ -36,7 +47,7 @@
           <h2 id="monthTitle">月曆</h2>
           <button id="nextMonth" type="button" aria-label="下一月">›</button>
         </div>
-        <div class="weekday-row">
+        <div id="weekdayRow" class="weekday-row">
           <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
         </div>
         <div id="calendarGrid" class="calendar-grid"></div>
@@ -52,14 +63,16 @@
             <table>
               <thead>
                 <tr>
-                  <th>時間</th>
-                  <th>航班</th>
-                  <th>價格</th>
-                  <th>轉機</th>
-                  <th>托運</th>
-                  <th>手提</th>
-                  <th>狀態</th>
-                  <th>連結</th>
+                  <th data-i18n="time">時間</th>
+                  <th data-i18n="origin">出發地</th>
+                  <th data-i18n="destination">目的地</th>
+                  <th data-i18n="flight">航班</th>
+                  <th data-i18n="price">價格</th>
+                  <th data-i18n="transfer">轉機</th>
+                  <th data-i18n="checkedBaggage">托運</th>
+                  <th data-i18n="carryOn">手提</th>
+                  <th data-i18n="status">狀態</th>
+                  <th data-i18n="link">連結</th>
                 </tr>
               </thead>
               <tbody id="detailRows"></tbody>
